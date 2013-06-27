@@ -2,27 +2,36 @@
 	margin:0 auto;
 	width:800px;
     padding: 0px;
+    background-color:#FAFAFA;
 	border-top:1px solid #6E9489;
 	border-bottom:1px solid #6E9489;
 	border-left:1px solid #6E9489;
 	border-right:1px solid #6E9489;
+    overflow: hidden;
+    position: relative;    
 }
 section {
 	float:left;
     width: 800px;
-	background-color:#FAFAFA;
+    position: relative;
+    right: 241px;
 }
 .page-content 
 {
     float: left;
     width: 500px;
     padding: 20px 0 0 20px;
+    border-right:1px solid #6E9489;
+    position: relative;
+    left: 241px;
 }
 aside {
 	float:left;
 	width:241px;
-    margin-right: 0;
+    margin-left: -1px;
 	background-color:#FAFAFA;
 	padding:10px 10px 10px 25px;
 	border-left:1px solid #6E9489;
+	position: relative;
+    left: 241px;
 }
