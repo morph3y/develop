@@ -1,0 +1,11 @@
+﻿body {
+	background-color:#DEDCC3;
+	font-family:"MS Sans Serif", Geneva, sans-serif;
+}
+body a:hover {
+	text-decoration:underline;
+}
+body a {
+	color:#41434a;
+	text-decoration:none;
+}

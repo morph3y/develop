@@ -1,7 +1,31 @@
-﻿@{
-    ViewBag.Title = "Master";
-}
+﻿<!DOCTYPE html>
+<html>
+    <head>
+	    <title>CHANGE IT</title>
+	    <meta charset="utf-8">
+  	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<h2>This is stuff</h2>
-
-@RenderBody()
+	    <meta name="description" content="Alex Denysenko Web Developer Website">
+	    <meta name="keywords" content="Web, Developer, Alex, Denysenko, Toronto, Canada, HTML5, CSS3, HTML, CSS, XHTML,  PHP, .NET, Websites, SEO, XML, JavaScript, JQuery, MVC3, MVC2, Razor, ORM" />
+	    <meta name="viewport" content="width=device-width">
+	    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+		<link rel="stylesheet" href="@Url.Content("~/Content/Style/Header/Web.Header.css")"/>
+	    <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Web.ViewStart.css")">
+        <link rel="stylesheet" href="@Url.Content("~/Content/Style/Body/Web.Body.css")">
+    </head>
+    <body>
+        @Html.Partial("Header")
+        <div class="page-container">
+            <section>
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+                <aside>
+                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/alexdenysenko/website" data-widget-id="350036893297176576">alexdenysenko</a>
+                    <script>    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+                </aside>
+            </section>
+            <div style="clear: both"></div>
+        </div>
+    </body>
+</html>

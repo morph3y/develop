@@ -1,0 +1,17 @@
+﻿<div class="loginStatus">
+	<label id='loginText' name='loginText' />
+	<a href="" id="loginButton" class="loginButton">login</a>
+	<a href='' id='logoutButton' name='logout' class="loginButton">logout</a>
+</div>
+<div id="loginForm" class="loginForm">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "login" })) {
+        @Html.TextBox("inputLogin", "", new { @class = "loginInput" })<br />
+        @Html.Password("inputPassword", "", new { @class = "loginInput" })<br />
+        @Html.ActionLink("Submit", "Index", "Home")
+    }
+</div>
+<header>
+	<nav>
+        @Html.ActionLink("Home", "Index", "Home")
+	</nav>
+</header>
