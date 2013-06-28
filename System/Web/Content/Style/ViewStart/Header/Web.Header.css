@@ -18,7 +18,7 @@
 header 
 {
     /* TODO: bullshit paths */
-	background:url("../../Images/Web.Header/logo.gif") no-repeat top left;
+	background:url("../../../Images/Web.Header/logo.gif") no-repeat top left;
 	margin:0 auto;
 	height:200px;
 	width: 800px;

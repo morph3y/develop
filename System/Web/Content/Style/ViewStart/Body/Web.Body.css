@@ -20,14 +20,15 @@ section {
 {
     float: left;
     width: 500px;
-    padding: 20px 0 0 20px;
+    padding: 20px 10px 0 20px;
     border-right:1px solid #6E9489;
     position: relative;
     left: 241px;
+    overflow: hidden;
 }
 aside {
 	float:left;
-	width:241px;
+	width:234px;
     margin-left: -1px;
 	background-color:#FAFAFA;
 	padding:10px 10px 10px 25px;

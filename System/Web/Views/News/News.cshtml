@@ -1,0 +1,15 @@
+﻿@using Web.Models.News
+@model NewsItemCollection
+
+@foreach (var item in Model.Items)
+{
+    <article class="newsItem-article">
+        <div class="newsItem-title">
+            @item.Title
+        </div>
+        <div class="newsItem-text">
+            @item.Text
+        </div>
+        <!-- TODO: Implement twitter button -->
+    </article>
+}
