@@ -1,6 +1,6 @@
-﻿using System;
-using System.Web.Mvc;
-using Web.Models.News;
+﻿using System.Web.Mvc;
+using Business;
+using Entities.Entities;
 
 namespace Web.Controllers
 {
@@ -8,19 +8,16 @@ namespace Web.Controllers
     {
         public ActionResult Index()
         {
-            var model = new NewsItemCollection();
-            model.Add(new NewsItem
-                          {
-                              Id = Guid.NewGuid(),
-                              Text = "Long time has passed since I updated my resume so I decided to throw in some new infromation. Check out the 'Resume' section for an update.",
-                              Title = "Resume update"
-                          });
-            model.Add(new NewsItem
-            {
-                Id = Guid.NewGuid(),
-                Text = "Long time has passed since I updated my resume so I decided to throw in some new infromation. Check out the 'Resume' section for an update.",
-                Title = "Resume update"
-            });
+            var test = new ObjectService();
+            var entity = new NewsItem
+                             {
+                                 Text =
+                                     "Long time has passed since I updated my resume so I decided to throw in some new infromation. Check out the 'Resume' section for an update.",
+                                 Title = "Resume update"
+                             };
+            test.Add(entity);
+            var model = test.Get<NewsItem>(entity.Id);
+            
             return View("News", model);
         }
     }

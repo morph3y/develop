@@ -90,16 +90,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\News\NewsItem.cs" />
-    <Compile Include="Models\News\NewsItemCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Style\News\Web.News.css" />
-    <Content Include="Content\Style\ViewStart\Body\Web.Body.css" />
-    <Content Include="Content\Style\ViewStart\Footer\Web.Footer.css" />
     <Content Include="Content\Style\ViewStart\Web.BoilerPlate.css" />
-    <Content Include="Content\Style\ViewStart\Header\Web.Header.css" />
     <Content Include="Content\Images\Web.Header\logo.gif" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -112,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +124,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\News\News.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{CCE28392-BCB4-42DF-8895-FBC463F48A07}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{269DD4BF-A07B-45D4-B67F-DB4352B5C735}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,15 +1,15 @@
-﻿@using Web.Models.News
-@model NewsItemCollection
+﻿@using Entities.Entities
+@model NewsItem
 
-@foreach (var item in Model.Items)
-{
+@section Styles{
+    <link rel="stylesheet" href="@Url.Content("~/Content/Style/News/Web.News.css")"/>
+}
     <article class="newsItem-article">
         <div class="newsItem-title">
-            @item.Title
+            @Model.Title
         </div>
         <div class="newsItem-text">
-            @item.Text
+            @Model.Text
         </div>
         <!-- TODO: Implement twitter button -->
     </article>
-}

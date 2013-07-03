@@ -8,13 +8,12 @@
         <meta name="keywords" content="Web, Developer, Alex, Denysenko, Toronto, Canada, HTML5, CSS3, HTML, CSS, XHTML,  PHP, .NET, Websites, SEO, XML, JavaScript, JQuery, MVC3, MVC2, Razor, ORM" />
         <meta name="viewport" content="width=device-width">
         <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-        <!-- TODO: Bullshit links to stylesheets -->
-        <link rel="stylesheet" href="@Url.Content("~/Content/Style/News/Web.News.css")"/>
         <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Web.BoilerPlate.css")"/>
         <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Web.ViewStart.css")" />
-        <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Header/Web.Header.css")"/>
-        <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Body/Web.Body.css")" />
-        <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Footer/Web.Footer.css")"/>
+        @if (IsSectionDefined("Styles"))
+        {
+            @RenderSection("Styles", required: false)
+        }
     </head>
     <body>
         @Html.Partial("Header")
