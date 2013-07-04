@@ -7,7 +7,7 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace DAL
 {
-    public static class DataAccessAdapter
+    internal static class DataAccessAdapter
     {
         private static ISessionFactory _sessionFactory;
         public static ISessionFactory Adapter

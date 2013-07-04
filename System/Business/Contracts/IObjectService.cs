@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using Entities.Entities;
 
-namespace Business
+namespace Business.Contracts
 {
     public interface IObjectService
     {

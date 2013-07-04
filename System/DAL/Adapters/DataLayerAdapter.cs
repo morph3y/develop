@@ -1,9 +1,9 @@
 ﻿using System;
 using Entities.Entities;
 
-namespace DAL.BusinessContext
+namespace DAL.Adapters
 {
-    public class BusinessContext : IBusinessContext
+    internal sealed class DataLayerAdapter : IDataLayerAdapter
     {
         public T Get<T>(Guid id) where T : BusinessObject
         {

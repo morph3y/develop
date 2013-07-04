@@ -1,10 +1,12 @@
-﻿using System.Web;
+﻿using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Ninject;
+using Ninject.Web.Common;
 
 namespace Web
 {
-    public class MvcApplication : HttpApplication
+    public class MvcApplication : NinjectHttpApplication 
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
@@ -23,8 +25,16 @@ namespace Web
 
         }
 
-        protected void Application_Start()
+        protected override IKernel CreateKernel()
         {
+            var ninjectKernel = new StandardKernel();
+            ninjectKernel.Load(Assembly.GetExecutingAssembly(), Assembly.Load("Business"), Assembly.Load("DAL"));
+            return ninjectKernel;
+        }
+
+        protected override void OnApplicationStarted()
+        {
+            base.OnApplicationStarted();
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
