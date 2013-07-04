@@ -1,7 +1,7 @@
-﻿using DAL.Adapters;
+﻿using DAL.Contracts;
 using Ninject.Modules;
 
-namespace DAL.DependencyContainer
+namespace DAL
 {
     public class DalDependencyContainer : NinjectModule
     {

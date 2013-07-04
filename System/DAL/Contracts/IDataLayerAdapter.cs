@@ -1,7 +1,7 @@
 ﻿using System;
 using Entities.Entities;
 
-namespace DAL.Adapters
+namespace DAL.Contracts
 {
     public interface IDataLayerAdapter
     {

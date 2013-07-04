@@ -1,10 +1,10 @@
 ﻿using System;
 using Business.Contracts;
-using DAL.Adapters;
+using DAL.Contracts;
 using Entities.Entities;
 using Ninject;
 
-namespace Business
+namespace Business.Services.Objects
 {
     internal sealed class ObjectService : IObjectService
     {

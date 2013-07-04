@@ -1,7 +1,8 @@
 using Business.Contracts;
+using Business.Services.Objects;
 using Ninject.Modules;
 
-namespace Business.DependencyContainer
+namespace Business
 {
     public class BusinessDependencyContainer : NinjectModule
     {

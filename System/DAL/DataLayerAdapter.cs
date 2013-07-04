@@ -1,7 +1,8 @@
 ﻿using System;
+using DAL.Contracts;
 using Entities.Entities;
 
-namespace DAL.Adapters
+namespace DAL
 {
     internal sealed class DataLayerAdapter : IDataLayerAdapter
     {
