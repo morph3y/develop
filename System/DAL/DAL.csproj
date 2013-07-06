@@ -67,10 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\DataLayerAdapter.cs" />
-    <Compile Include="Adapters\IDataLayerAdapter.cs" />
+    <Compile Include="DataLayerAdapter.cs" />
+    <Compile Include="Contracts\IDataLayerAdapter.cs" />
     <Compile Include="DataAccessAdapter.cs" />
-    <Compile Include="DependencyContainer\DalDependencyContainer.cs" />
+    <Compile Include="DalDependencyContainer.cs" />
     <Compile Include="Mappings\NewsItemMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

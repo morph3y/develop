@@ -61,9 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IObjectService.cs" />
-    <Compile Include="DependencyContainer\BusinessDependencyContainer.cs" />
-    <Compile Include="ObjectService.cs" />
+    <Compile Include="BusinessDependencyContainer.cs" />
+    <Compile Include="Contracts\IUserAccessManager.cs" />
+    <Compile Include="Services\Objects\ObjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAccess\Authentication.cs" />
+    <Compile Include="Services\UserAccess\UserAccessManager.cs" />
+    <Compile Include="Contracts\IAuthentication.cs" />
+    <Compile Include="UserAccess\AuthModule.cs" />
+    <Compile Include="UserAccess\Identity.cs" />
+    <Compile Include="UserAccess\Principal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
