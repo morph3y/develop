@@ -1,5 +1,9 @@
-﻿<div class="loginStatus">
-    <label id='loginText' name='loginText' />
+﻿@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Login.js")"></script>
+}
+
+<div class="loginStatus">
+    <label id='loginText' name='loginText'></label>
     <a href="" id="loginButton" class="loginButton">login</a> 
     <a href="@Url.Action("Logout", "Login")" id="logoutButton" class="loginButton">Logout</a>
 </div>
@@ -10,8 +14,5 @@
         @Html.Password("inputPassword", "", new { @class = "loginInput" })<br />
         
         <a href="@Url.Action("Authenticate", "Login")" id="submit">Submit</a>
-        
-        
-        //@Html.ActionLink("Submit", "Authenticate", "Login", new {}, new { id = "submit" })
     }
 </div>

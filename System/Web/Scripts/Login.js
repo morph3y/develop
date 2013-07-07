@@ -1,50 +1,62 @@
-﻿$(document).ready(function () {
-    $('.loginForm').hide();
-    $("#loginButton").on("click", function (e) {
-        $('.loginForm').slideToggle("slow");
-        e.preventDefault();
-    });
-    $('#logoutButton').css('display', 'none');
+﻿registerNamespace("System.Login");
 
-    $('#submit').on("click", function () {
-        var username = $('#inputLogin').val();
-        var password = $('#inputPassword').val();
-        var url = $('#submit').attr('href');
+System.Login = {
+    init: function () {
+        var loginForm = $('.loginForm');
+        var loginButton = $("#loginButton");
+        var logoutButton = $('#logoutButton');
+        var loginText = $('#loginText');
+        var submitButton = $('#submit');
 
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: {
-                userName: username,
-                password: password
-            },
-            success: function (data) {
-                $('.loginStatus').prepend(data);
-                $('.loginForm').slideToggle("slow");
-                $('#logoutButton').css('display', 'block');
-                $("#loginButton").css('display', "none");
-            },
-            error: function () {
-                $('.loginForm').slideToggle("slow");
-            }
+        loginForm.hide();
+        loginButton.on("click", function (e) {
+            loginForm.slideToggle("slow");
+            e.preventDefault();
         });
-        return false;
-    });
+        logoutButton.css('display', 'none');
 
-    $('#logoutButton').on("click", function () {
-        var url = $('#logoutButton').attr('href');
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: { },
-            success: function (data) {
-                $('#logoutButton').css('display', 'none');
-                $("#loginButton").css('display', "block");
-            },
-            error: function () {
-                $('.loginForm').slideToggle("slow");
-            }
+        submitButton.on("click", function () {
+            var username = $('#inputLogin').val();
+            var password = $('#inputPassword').val();
+            var url = $('#submit').attr('href');
+            var data = { username: username, password: password };
+
+            var successMethod = function (response) {
+                loginText.text(response);
+                loginForm.slideToggle("slow");
+                logoutButton.css('display', 'block');
+                loginButton.css('display', "none");
+            };
+
+            var failMethod = function (response) {
+                loginForm.slideToggle("slow");
+            };
+
+            System.postData(data, url, successMethod, failMethod);
+            
+            return false;
         });
-        return false;
-    });
+
+        logoutButton.on('click', function () {
+            var url = logoutButton.attr('href');
+
+            var successMethod = function (response) {
+                loginText.text("");
+                logoutButton.css('display', 'none');
+                loginButton.css('display', "block");
+            };
+
+            var failMethod = function (response) {
+                loginForm.slideToggle("slow");
+            };
+
+            System.postData({}, url, successMethod, failMethod);
+            
+            return false;
+        });
+    }
+};
+
+$(document).ready(function () {
+    System.Login.init();
 });

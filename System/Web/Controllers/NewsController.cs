@@ -5,7 +5,7 @@ using Ninject;
 
 namespace Web.Controllers
 {
-    public class NewsController : ActionController
+    public class NewsController : Controller
     {
         [Inject]
         public IObjectService ObjectService { get; set; }

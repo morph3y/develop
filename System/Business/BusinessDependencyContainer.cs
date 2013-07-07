@@ -1,6 +1,6 @@
 using Business.Contracts;
+using Business.Services.Authentication;
 using Business.Services.Objects;
-using Business.Services.UserAccess;
 using Ninject.Modules;
 
 namespace Business
@@ -10,7 +10,7 @@ namespace Business
         public override void Load()
         {
             Bind<IObjectService>().To<ObjectService>().InTransientScope();
-            Bind<IUserAccessManager>().To<UserAccessManager>().InThreadScope();
+            Bind<IAuthenticationService>().To<AuthenticationService>().InTransientScope();
         }
     }
 }

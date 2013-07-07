@@ -4,33 +4,33 @@ using Ninject;
 
 namespace Web.Controllers
 {
-    public class LoginController : ActionController
+    public class LoginController : Controller
     {
         [Inject]
-        public IUserAccessManager UserAccessManager { get; set; }
-
-        [Inject]
-        public IAuthentication Authentication { get; set; }
+        public IAuthenticationService AuthenticationService { get; set; }
 
         [HttpPost]
         public ActionResult Authenticate(string userName, string password)
         {
-            if (UserAccessManager.Authenticate(userName, password))
+            var hashedPassword = AuthenticationService.HashPassword(password);
+            if (AuthenticationService.Authenticate(userName, hashedPassword))
             {
-                Authentication.SetCookies(userName);
-                return PartialView("Login");
+                var identity = AuthenticationService.CreatePrincipal(userName);
+                var authCookie = AuthenticationService.CreateCookie(userName);
+
+                Response.Cookies.Add(authCookie);
+                HttpContext.User = identity;
             }
-            else
-            {
-                return PartialView("Login");
-            }
+            return PartialView("Login");
         }
 
         [HttpPost]
-        public ActionResult Logout()
+        public void Logout()
         {
-            Authentication.DeleteCookies();
-            return PartialView("Logout");
+            if (User.Identity.IsAuthenticated)
+            {
+                AuthenticationService.SignOut();
+            }
         }
     }
 }
