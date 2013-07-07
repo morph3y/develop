@@ -32,7 +32,7 @@ namespace DAL
 
         private static void BuildSchemaConfiguration(Configuration obj)
         {
-            new SchemaExport(obj).Create(false, true);
+            new SchemaValidator(obj).Validate();
         }
     }
 }

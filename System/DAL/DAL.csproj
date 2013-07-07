@@ -71,7 +71,9 @@
     <Compile Include="Contracts\IDataLayerAdapter.cs" />
     <Compile Include="DataAccessAdapter.cs" />
     <Compile Include="DalDependencyContainer.cs" />
+    <Compile Include="Expressions\CriteraFactory.cs" />
     <Compile Include="Mappings\NewsItemMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

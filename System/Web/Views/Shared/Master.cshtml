@@ -2,18 +2,14 @@
 <html>
     <head>
         <title>CHANGE IT</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="Alex Denysenko Web Developer Website">
-        <meta name="keywords" content="Web, Developer, Alex, Denysenko, Toronto, Canada, HTML5, CSS3, HTML, CSS, XHTML,  PHP, .NET, Websites, SEO, XML, JavaScript, JQuery, MVC3, MVC2, Razor, ORM" />
-        <meta name="viewport" content="width=device-width">
-        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="description" content="Alex Denysenko Web Developer Website" />
+        <meta name="keywords" content="Web, Developer, Alex, Denysenko, Toronto, Canada, HTML5, CSS3, HTML, CSS, XHTML,  PHP, .NET, Websites, SEO, XML, JavaScript, JQuery, MVC3, MVC2, Razor, ORM, Ninject, NHibernate, LLBLGen" />
+        <meta name="viewport" content="width=device-width" />
+        <script charset="utf-8" type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
         <script type="text/javascript" language="javascript" src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
         <script type="text/javascript" language="javascript" src="@Url.Content("~/Scripts/System.js")"></script>
-        @if (IsSectionDefined("Scripts"))
-        {
-            @RenderSection("Scripts", required: false)
-        }
         <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Web.BoilerPlate.css")"/>
         <link rel="stylesheet" href="@Url.Content("~/Content/Style/ViewStart/Web.ViewStart.css")" />
         @if (IsSectionDefined("Styles"))

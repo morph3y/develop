@@ -10,18 +10,18 @@ namespace Web.Controllers
         public IAuthenticationService AuthenticationService { get; set; }
 
         [HttpPost]
-        public ActionResult Authenticate(string userName, string password)
+        public JsonResult Authenticate(string userName, string password)
         {
-            var hashedPassword = AuthenticationService.HashPassword(password);
-            if (AuthenticationService.Authenticate(userName, hashedPassword))
+            if (AuthenticationService.Authenticate(userName, password))
             {
                 var identity = AuthenticationService.CreatePrincipal(userName);
                 var authCookie = AuthenticationService.CreateCookie(userName);
 
                 Response.Cookies.Add(authCookie);
                 HttpContext.User = identity;
+                return Json(new { result = true, data = "Welcome " + userName + "!" });
             }
-            return PartialView("Login");
+            return Json(new { result = false, data = "" });
         }
 
         [HttpPost]

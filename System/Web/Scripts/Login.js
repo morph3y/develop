@@ -22,10 +22,15 @@ System.Login = {
             var data = { username: username, password: password };
 
             var successMethod = function (response) {
-                loginText.text(response);
-                loginForm.slideToggle("slow");
-                logoutButton.css('display', 'block');
-                loginButton.css('display', "none");
+                if (response.result) {
+                    loginText.text(response);
+                    loginForm.slideToggle("slow");
+                    logoutButton.css('display', 'block');
+                    loginButton.css('display', "none");
+                }
+                else {
+                    loginForm.slideToggle("slow");
+                }
             };
 
             var failMethod = function (response) {
@@ -33,7 +38,7 @@ System.Login = {
             };
 
             System.postData(data, url, successMethod, failMethod);
-            
+
             return false;
         });
 
@@ -51,7 +56,7 @@ System.Login = {
             };
 
             System.postData({}, url, successMethod, failMethod);
-            
+
             return false;
         });
     }

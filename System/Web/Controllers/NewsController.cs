@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Business.Contracts;
 using Entities.Entities;
 using Ninject;
@@ -12,15 +13,7 @@ namespace Web.Controllers
 
         public ActionResult Index()
         {
-            var entity = new NewsItem
-                             {
-                                 Text =
-                                     "Long time has passed since I updated my resume so I decided to throw in some new infromation. Check out the 'Resume' section for an update.",
-                                 Title = "Resume update"
-                             };
-            ObjectService.Add(entity);
-            var model = ObjectService.Get<NewsItem>(entity.Id);
-            
+            var model = ObjectService.Get<NewsItem>(Guid.Parse("655e363a-48e2-41dc-bdca-a1f400c2b574"));
             return View("News", model);
         }
     }

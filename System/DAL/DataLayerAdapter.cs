@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using DAL.Contracts;
+using DAL.Expressions;
 using Entities.Entities;
+using Entities.Expression.Common;
 
 namespace DAL
 {
@@ -24,6 +27,19 @@ namespace DAL
                     transaction.Commit();
                 }
             }
+        }
+
+        public IList<T> Get<T>(ExpressionType operatorType, string lhv, string rhv) where T : BusinessObject
+        {
+            var criteria = new CriteraFactory(lhv, rhv).Get(operatorType);
+            if (criteria != null)
+            {
+                using (var session = DataAccessAdapter.Adapter.OpenSession())
+                {
+                    return session.CreateCriteria<T>().Add(criteria).List<T>();
+                }
+            }
+            return new List<T>();
         }
     }
 }
