@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using DAL.Contracts;
-using DAL.Expressions;
 using Entities.Entities;
-using Entities.Expression.Common;
+using NHibernate.Criterion;
 
 namespace DAL
 {
@@ -29,17 +29,12 @@ namespace DAL
             }
         }
 
-        public IList<T> Get<T>(ExpressionType operatorType, string lhv, string rhv) where T : BusinessObject
+        public IList<T> Get<T>(Expression<Func<T, bool>> action) where T : BusinessObject
         {
-            var criteria = new CriteraFactory(lhv, rhv).Get(operatorType);
-            if (criteria != null)
+            using (var session = DataAccessAdapter.Adapter.OpenSession())
             {
-                using (var session = DataAccessAdapter.Adapter.OpenSession())
-                {
-                    return session.CreateCriteria<T>().Add(criteria).List<T>();
-                }
+                return session.CreateCriteria<T>().Add(Restrictions.Where(action)).List<T>();
             }
-            return new List<T>();
-        }
+        } 
     }
 }

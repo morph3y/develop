@@ -3,9 +3,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using Business.Contracts;
-using Entities;
 using Entities.Entities;
-using Entities.Expression.Common;
 using Ninject;
 
 namespace Business.Services.Authentication
@@ -17,7 +15,7 @@ namespace Business.Services.Authentication
 
         public bool Authenticate(string userName, string password)
         {
-            var users = ObjectService.Get<User>(ExpressionType.Equals, PropertyUtil.GetPropertyName<User>(x=>x.UserName), userName);
+            var users = ObjectService.Get<User>(x => x.UserName == userName);
             if (users.Any() && users.Count == 1)
             {
                 if (HashPassword(password) == users.First().Password)
@@ -30,7 +28,8 @@ namespace Business.Services.Authentication
 
         private string HashPassword(string password)
         {
-            return FormsAuthentication.HashPasswordForStoringInConfigFile(password.Trim(), "sha1");
+            var hashedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(password.Trim(), "sha1");
+            return hashedPassword != null ? hashedPassword.ToLower() : string.Empty;
         }
 
         public HttpCookie CreateCookie(string userName)

@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Entities.Entities;
-using Entities.Expression.Common;
 
 namespace Business.Contracts
 {
     public interface IObjectService
     {
         T Get<T>(Guid id) where T : BusinessObject;
-        IList<T> Get<T>(ExpressionType operatorType, string lhv, string rhv) where T : BusinessObject;
+        IList<T> Get<T>(Expression<Func<T, bool>> action) where T : BusinessObject;
     }
 }

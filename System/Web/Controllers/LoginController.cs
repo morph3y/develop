@@ -12,7 +12,7 @@ namespace Web.Controllers
         [HttpPost]
         public JsonResult Authenticate(string userName, string password)
         {
-            if (AuthenticationService.Authenticate(userName, password))
+            if (AuthenticationService.Authenticate(userName, password) && !User.Identity.IsAuthenticated)
             {
                 var identity = AuthenticationService.CreatePrincipal(userName);
                 var authCookie = AuthenticationService.CreateCookie(userName);

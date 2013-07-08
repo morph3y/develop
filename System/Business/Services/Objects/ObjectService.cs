@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Business.Contracts;
 using DAL.Contracts;
 using Entities.Entities;
-using Entities.Expression.Common;
 using Ninject;
 
 namespace Business.Services.Objects
@@ -18,9 +18,9 @@ namespace Business.Services.Objects
             return DataLayerAdapter.Get<T>(id);
         }
 
-        public IList<T> Get<T>(ExpressionType operatorType, string lhv, string rhv) where T : BusinessObject
+        public IList<T> Get<T>(Expression<Func<T, bool>> action) where T : BusinessObject
         {
-            return DataLayerAdapter.Get<T>(operatorType, lhv, rhv);
+            return DataLayerAdapter.Get(action);
         }
     }
 }

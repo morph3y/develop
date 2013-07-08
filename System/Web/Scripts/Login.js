@@ -8,12 +8,17 @@ System.Login = {
         var loginText = $('#loginText');
         var submitButton = $('#submit');
 
-        loginForm.hide();
-        loginButton.on("click", function (e) {
-            loginForm.slideToggle("slow");
-            e.preventDefault();
-        });
-        logoutButton.css('display', 'none');
+        if (!loginText.data('lg')) {
+            loginForm.hide();
+            loginButton.on("click", function (e) {
+                loginForm.slideToggle("slow");
+                e.preventDefault();
+            });
+            logoutButton.css('display', 'none');
+        }
+        else {
+            loginButton.css('display', 'none');
+        }
 
         submitButton.on("click", function () {
             var username = $('#inputLogin').val();
@@ -23,7 +28,7 @@ System.Login = {
 
             var successMethod = function (response) {
                 if (response.result) {
-                    loginText.text(response);
+                    loginText.text(response.data);
                     loginForm.slideToggle("slow");
                     logoutButton.css('display', 'block');
                     loginButton.css('display', "none");
