@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Business.Contracts;
-using DAL.Contracts;
 using Entities.Entities;
+using Framework.Common.Contracts;
 using Ninject;
 
 namespace Business.Services.Objects

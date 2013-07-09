@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using Entities.Entities;
 
-namespace DAL.Contracts
+namespace Framework.Common.Contracts
 {
     public interface IDataLayerAdapter
     {

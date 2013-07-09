@@ -1,6 +1,6 @@
-using Business.Contracts;
 using Business.Services.Authentication;
 using Business.Services.Objects;
+using Framework.Common.Contracts;
 using Ninject.Modules;
 
 namespace Business

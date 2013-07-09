@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using DAL.Contracts;
 using Entities.Entities;
+using Framework.Common.Contracts;
 using NHibernate.Criterion;
 
 namespace DAL

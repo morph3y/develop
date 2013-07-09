@@ -2,8 +2,8 @@
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
-using Business.Contracts;
 using Entities.Entities;
+using Framework.Common.Contracts;
 using Ninject;
 
 namespace Business.Services.Authentication

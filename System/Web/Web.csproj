@@ -150,6 +150,10 @@
       <Project>{269DD4BF-A07B-45D4-B67F-DB4352B5C735}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Common\Framework.Common.csproj">
+      <Project>{AE9EEFA6-391E-478C-8AEA-31605039345B}</Project>
+      <Name>Framework.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

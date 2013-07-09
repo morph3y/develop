@@ -1,7 +1,7 @@
 ﻿using System.Security.Principal;
 using System.Web;
 
-namespace Business.Contracts
+namespace Framework.Common.Contracts
 {
     public interface IAuthenticationService
     {

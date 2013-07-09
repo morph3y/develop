@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Business.Contracts;
+using Framework.Common.Contracts;
 using Ninject;
 
 namespace Web.Controllers

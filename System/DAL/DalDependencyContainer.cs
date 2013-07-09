@@ -1,4 +1,4 @@
-﻿using DAL.Contracts;
+﻿using Framework.Common.Contracts;
 using Ninject.Modules;
 
 namespace DAL
