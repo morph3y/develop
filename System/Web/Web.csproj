@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabases>false</PublishDatabases>
     <PackageAsSingleFile>true</PackageAsSingleFile>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -90,7 +91,6 @@
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Bootstrap\Bootstraper.cs" />
     <Compile Include="Bootstrap\StructureMapControllerFactory.cs" />
-    <Compile Include="Bootstrap\StructureMapDependencyResolver.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -141,10 +141,6 @@
     <Content Include="Views\News\News.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
-      <Project>{CCE28392-BCB4-42DF-8895-FBC463F48A07}</Project>
-      <Name>Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{269DD4BF-A07B-45D4-B67F-DB4352B5C735}</Project>
       <Name>Entities</Name>

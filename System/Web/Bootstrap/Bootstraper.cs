@@ -9,7 +9,6 @@ namespace Web.Bootstrap
             // Initialize the static ObjectFactory container
             ObjectFactory.Configure(x => x.Scan( s=>
             {
-                //s.AssembliesFromApplicationBaseDirectory();
                 s.TheCallingAssembly();
                 s.Assembly("Web");
                 s.Assembly("Business");
