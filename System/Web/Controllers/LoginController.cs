@@ -1,14 +1,16 @@
 ﻿using System.Web.Mvc;
 using Framework.Common.Contracts;
-using Ninject;
 
 namespace Web.Controllers
 {
     public class LoginController : Controller
     {
-        [Inject]
-        public IAuthenticationService AuthenticationService { get; set; }
+        private IAuthenticationService AuthenticationService { get; set; }
 
+        public LoginController(IAuthenticationService authenticationService)
+        {
+            AuthenticationService = authenticationService;
+        }
         [HttpPost]
         public JsonResult Authenticate(string userName, string password)
         {

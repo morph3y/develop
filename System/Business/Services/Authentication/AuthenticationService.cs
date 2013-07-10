@@ -4,13 +4,16 @@ using System.Web;
 using System.Web.Security;
 using Entities.Entities;
 using Framework.Common.Contracts;
-using Ninject;
 
 namespace Business.Services.Authentication
 {
-    internal sealed class AuthenticationService : IAuthenticationService
+    public sealed class AuthenticationService : IAuthenticationService
     {
-        [Inject]
+        public AuthenticationService(IObjectService objectService)
+        {
+            ObjectService = objectService;
+        }
+
         public IObjectService ObjectService { get; set; }
 
         public bool Authenticate(string userName, string password)

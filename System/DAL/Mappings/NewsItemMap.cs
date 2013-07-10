@@ -10,6 +10,7 @@ namespace DAL.Mappings
             Id(x => x.Id);
             Map(x => x.Text);
             Map(x => x.Title);
+            Map(x => x.DatePosted);
         }
     }
 }

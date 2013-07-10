@@ -1,12 +1,13 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Ninject;
-using Ninject.Web.Common;
+using StructureMap;
+using Web.Bootstrap;
 
 namespace Web
 {
-    public class MvcApplication : NinjectHttpApplication 
+    public class MvcApplication : HttpApplication 
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
@@ -20,25 +21,22 @@ namespace Web
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
+                new[] { "Web.Controllers" }
             );
 
         }
 
-        protected override IKernel CreateKernel()
+        protected void Application_Start(object sender, EventArgs e) 
         {
-            var ninjectKernel = new StandardKernel();
-            ninjectKernel.Load(Assembly.GetExecutingAssembly(), Assembly.Load("Business"), Assembly.Load("DAL"));
-            return ninjectKernel;
-        }
-
-        protected override void OnApplicationStarted()
-        {
-            base.OnApplicationStarted();
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            Bootstraper.Initialize();
+
+            ControllerBuilder.Current.SetControllerFactory(new StructureMapControllerFactory());
         }
     }
 }

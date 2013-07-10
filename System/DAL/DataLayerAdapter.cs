@@ -7,7 +7,7 @@ using NHibernate.Criterion;
 
 namespace DAL
 {
-    internal sealed class DataLayerAdapter : IDataLayerAdapter
+    public sealed class DataLayerAdapter : IDataLayerAdapter
     {
         public T Get<T>(Guid id) where T : BusinessObject
         {

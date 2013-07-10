@@ -2,13 +2,16 @@
 using System.Web.Mvc;
 using Entities.Entities;
 using Framework.Common.Contracts;
-using Ninject;
 
 namespace Web.Controllers
 {
     public class NewsController : Controller
     {
-        [Inject]
+        public NewsController(IObjectService objectService)
+        {
+            ObjectService = objectService;
+        }
+
         public IObjectService ObjectService { get; set; }
 
         public ActionResult Index()

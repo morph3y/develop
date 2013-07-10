@@ -36,10 +36,12 @@ System.Login = {
                 else {
                     loginForm.slideToggle("slow");
                 }
+                document.location.reload(true);
             };
 
             var failMethod = function (response) {
                 loginForm.slideToggle("slow");
+                document.location.reload(true);
             };
 
             System.postData(data, url, successMethod, failMethod);
@@ -54,10 +56,12 @@ System.Login = {
                 loginText.text("");
                 logoutButton.css('display', 'none');
                 loginButton.css('display', "block");
+                document.location.reload(true);
             };
 
             var failMethod = function (response) {
                 loginForm.slideToggle("slow");
+                document.location.reload(true);
             };
 
             System.postData({}, url, successMethod, failMethod);

@@ -49,12 +49,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Web.Common">
-      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net40-full\Ninject.Web.Common.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DalDependencyContainer.cs" />
     <Compile Include="DataLayerAdapter.cs" />
     <Compile Include="DataAccessAdapter.cs" />
     <Compile Include="Mappings\NewsItemMap.cs" />

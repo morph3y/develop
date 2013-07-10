@@ -13,10 +13,7 @@ registerNamespace("System");
 
 System = {
     init: function () {
-        var js = document.createElement("script");
-        js.type = "text/javascript";
-        js.src = "Scripts/Login.js";
-        document.body.appendChild(js);
+        
     },
     postData: function (data, url, success, fail) {
         $.ajax({
