@@ -7,7 +7,7 @@ using Framework.Common.Contracts;
 
 namespace Business.Services.Authentication
 {
-    public sealed class AuthenticationService : IAuthenticationService
+    internal sealed class AuthenticationService : IAuthenticationService
     {
         public AuthenticationService(IObjectService objectService)
         {

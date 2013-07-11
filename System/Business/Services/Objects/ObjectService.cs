@@ -6,7 +6,7 @@ using Framework.Common.Contracts;
 
 namespace Business.Services.Objects
 {
-    public sealed class ObjectService : IObjectService
+    internal sealed class ObjectService : IObjectService
     {
         public ObjectService(IDataLayerAdapter dataLayerAdapter)
         {

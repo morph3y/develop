@@ -149,6 +149,10 @@
       <Project>{AE9EEFA6-391E-478C-8AEA-31605039345B}</Project>
       <Name>Framework.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{B0211EFE-5663-40A7-A8C6-03BF23AD4059}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
