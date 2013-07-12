@@ -161,9 +161,6 @@
     <Content Include="Views\Shared\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Login\Login.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Areas\Admin\Views\Web.config" />
   </ItemGroup>
   <ItemGroup>

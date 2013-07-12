@@ -11,6 +11,7 @@ namespace Web.Controllers
         {
             AuthenticationService = authenticationService;
         }
+
         [HttpPost]
         public JsonResult Authenticate(string userName, string password)
         {
@@ -21,18 +22,17 @@ namespace Web.Controllers
 
                 Response.Cookies.Add(authCookie);
                 HttpContext.User = identity;
-                return Json(new { result = true, data = "Welcome " + userName + "!" });
             }
-            return Json(new { result = false, data = "" });
+            return null;
         }
 
-        [HttpPost]
-        public void Logout()
+        public ActionResult Logout()
         {
             if (User.Identity.IsAuthenticated)
             {
                 AuthenticationService.SignOut();
             }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

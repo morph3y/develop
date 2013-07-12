@@ -21,10 +21,14 @@ System = {
             url: url,
             data: data,
             success: function (response) {
-                success(response);
+                if (success != null) {
+                    success(response);
+                }
             },
             error: function (response) {
-                fail(response);
+                if (fail != null) {
+                    fail(response);
+                }
             }
         });
         return false;
