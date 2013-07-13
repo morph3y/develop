@@ -24,5 +24,20 @@ namespace Business.Services.Objects
         {
             return DataLayerAdapter.Get(action);
         }
+
+        public IList<T> Get<T>(Expression<Func<bool>> action) where T : BusinessObject
+        {
+            return DataLayerAdapter.Get<T>(action);
+        }
+
+        public IList<T> Get<T>() where T : BusinessObject
+        {
+            return DataLayerAdapter.Get<T>();
+        }
+
+        public IList<T> Get<T>(Int32 page, Int32 pageSize, Expression<Func<T, object>> orderByProperty) where T : BusinessObject
+        {
+            return DataLayerAdapter.Get<T>(page, pageSize, orderByProperty);
+        }
     }
 }

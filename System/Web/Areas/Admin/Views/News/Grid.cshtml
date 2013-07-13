@@ -1,0 +1,22 @@
+﻿@using Entities.Entities
+@model List<NewsItem>
+
+<table id="news-grid" data-url="@Url.Action("GetData")">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Text</th>
+            <th>DatePosted</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td data-id="@item.Id.ToString()">@item.Title</td>
+                <td>@item.Text</td>
+                <td>@item.DatePosted</td>
+            </tr>
+        }
+    </tbody>
+</table>  

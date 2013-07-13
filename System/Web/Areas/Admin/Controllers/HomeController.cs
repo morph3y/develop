@@ -2,11 +2,11 @@
 
 namespace Web.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AdminBaseController
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index", "News");
+            return View("Index");
         }
     }
 }
