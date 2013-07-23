@@ -6,7 +6,7 @@ using StructureMap;
 
 namespace Framework
 {
-    public static class DependecyResolver
+    public static class DependencyResolver
     {
         public static void Initialize(ConfigurationExpression conf)
         {

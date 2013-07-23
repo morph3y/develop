@@ -1,7 +1,7 @@
 ﻿using System.Security;
 using System.Web.Mvc;
 
-namespace Web.Areas.Admin.Controllers
+namespace Web.Areas.Admin.Infrastructure
 {
     public class AdminBaseController : Controller
     {
@@ -9,7 +9,7 @@ namespace Web.Areas.Admin.Controllers
         {
             if (!User.Identity.IsAuthenticated)
             {
-                throw new SecurityException("Only register user can access this.");
+                throw new SecurityException("Only registered users can access this.");
             }
         }
     }

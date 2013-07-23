@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Web.Areas.Admin.Infrastructure;
 
 namespace Web.Areas.Admin.Controllers
 {

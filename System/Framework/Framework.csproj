@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependecyResolver.cs" />
+    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="Grid\GridDataDefinition.cs" />
+    <Compile Include="Grid\GridDataObject.cs" />
+    <Compile Include="Grid\IPropertyData.cs" />
+    <Compile Include="Grid\SimplePropertyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

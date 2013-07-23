@@ -37,7 +37,7 @@ namespace Business.Services.Objects
 
         public IList<T> Get<T>(Int32 page, Int32 pageSize, Expression<Func<T, object>> orderByProperty) where T : BusinessObject
         {
-            return DataLayerAdapter.Get<T>(page, pageSize, orderByProperty);
+            return DataLayerAdapter.Get(page, pageSize, orderByProperty);
         }
     }
 }

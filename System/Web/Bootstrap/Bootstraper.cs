@@ -7,7 +7,7 @@ namespace Web.Bootstrap
     {
         public static void Initialize()
         {
-            ObjectFactory.Configure(DependecyResolver.Initialize);
+            ObjectFactory.Configure(DependencyResolver.Initialize);
         }
     }
 }

@@ -1,0 +1,10 @@
+﻿@using Framework.Grid
+@model GridDataDefinition
+<div class="grid-container">
+    @Html.Partial("GridContent", Model)
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        System.Grid.init("@Model.Controller.ToLower()");
+    });
+</script>

@@ -1,0 +1,41 @@
+﻿@using Framework.Grid
+@model GridDataDefinition
+
+@{var objectData = Model.DataObjects;}
+<table id="@Model.Controller.ToLower()-grid" class="system-grid" data-pagesize="@Model.ItemsPerPage" data-currentpage="@Model.CurrentPage">
+    <thead>
+        <tr>
+            @if (objectData.Count != 0) {
+                foreach (var property in objectData.First().Properties)
+                {
+                    <th>@property.Name</th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @if (objectData.Count != 0)
+        {
+            foreach (var item in objectData)
+                {
+                    <tr data-id="@item.Id">
+                        @foreach (var propertyData in item.Properties)
+                        {
+                            <td class="grid-data-cell" data-for="@propertyData.Name">@propertyData.Value</td>
+                        }
+                    </tr>
+                }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+        @{
+            var colspan = objectData.Count != 0 ? objectData.First().Properties.Count() : 0;
+        }
+            <td colspan="@colspan">
+                @Html.ActionLink("<<", Model.Action, Model.Controller, new { Area = Model.Area, page = @Model.CurrentPage - 1, pageSize = @Model.ItemsPerPage }, new { @class = "grid-link", id = "grid-prev" })
+                @Html.ActionLink(">>", Model.Action, Model.Controller, new { Area = Model.Area, page = @Model.CurrentPage + 1, pageSize = @Model.ItemsPerPage }, new { @class = "grid-link", id = "grid-next" })
+            </td>
+        </tr>
+    </tfoot>
+</table>

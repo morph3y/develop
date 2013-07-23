@@ -13,7 +13,7 @@ registerNamespace("System");
 
 System = {
     init: function () {
-        
+
     },
     postData: function (data, url, success, fail) {
         $.ajax({
@@ -32,6 +32,16 @@ System = {
             }
         });
         return false;
+    },
+    bindAjaxLoader: function (jQueryElement) {
+        var w = jQueryElement.width();
+        var h = jQueryElement.height();
+        var style = "width:" + w + "px; height:" + h + "px;";
+        jQueryElement.append("<div class=\"overlay\" style='" + style + "'></div><img src='../Content/Images/Web.Grid/ajax-loader.gif' style=top:" + (h - 10) / 2 + "px;bottom:0px;left:" + (w - 10) / 2 + "px;right:0px;' class='overlay-img' />");
+    },
+    hideAjaxLoader: function () {
+        $(".overlay").remove();
+        $(".overlay-img").remove();
     }
 };
 
