@@ -1,22 +1,56 @@
+body {
+    font-family: MuseoSans, Georgia, "Times New Roman", Times, serif;
+    background-color: #5C4B51;
+}
 
+body a {
+    color: #8CBEB2;
+}
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+body a:hover {
+    color: #F3B562;
+    cursor: pointer;
+    text-decoration: underline;
+}
 
+body a:visited {
+    color: #F06060;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/******************************
+***********HEADER**************
+******************************/
+.header {
+    font-size: 16px;
+    color: #F2EBBF;
+}
+    .header .content {
+        margin: 0 auto;
+        width: 800px;
+        border-left: 1px solid #635158;
+        border-right: 1px solid #635158;
+    }
+        .header .content .title {
+            line-height: 30px;
+            width: 250px;
+            float: left;
+            padding: 20px;
+        }
+            .header .content .title .slogan {
+                font-size: 12px;
+                margin-left: 35px;
+            }
+            .header .content .title .abbr {
+                font-size: 42px;
+            }
+            .header .content .title .name {
+                font-size: 30px;
+                margin-top: 10px;
+            }
+        .header .content .navigation {
+            float: right;
+            margin-right: 5px;
+        }
+        .header .content .hero {
+            border: 1px dashed blue;
+        }
