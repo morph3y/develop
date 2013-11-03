@@ -1,7 +1,8 @@
 body {
-    font-family: MuseoSans, Georgia, "Times New Roman", Times, serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: #5C4B51;
     color: #F2EBBF;
+    font-weight: 100;
 }
 
 body a {
@@ -20,7 +21,7 @@ body a:visited {
 
 .container {
     margin: 0 auto;
-    width: 800px;
+    width: 1000px;
     border-left: 1px solid #635158;
     border-right: 1px solid #635158;
 }
@@ -64,30 +65,37 @@ body a:visited {
 .body {
 }
     .body .lefty {
-        width: 500px;
+        width: 700px;
         float: left;
         border-right: 1px solid #635158;
         padding: 15px;
     }
     .body .righty 
     {
-        left: -7px;
-        width: 29%;
+        left: -9px;
+        width: 23%;
         float: right;
         border-left: 1px solid #635158;
         position: relative;
         padding: 15px;
     }
+    .body .righty .social {
+        
+    }
     
+/******************************
+***********FOOTER**************
+******************************/
+
+
 /******************************
 ***********NEWS****************
 ******************************/
 .news-item {
-    
+    margin-top: 10px;
 }
     .news-item .news-header {
-        border-bottom: 1px solid #635158;
-        padding-bottom: 5px;
+        font-size: 1.2em;
     }
         .news-item .news-header .news-date {
             font-size: 10px;
@@ -95,5 +103,7 @@ body a:visited {
             margin-left: 20px;
         }
     .news-item .news-body {
+        border-bottom: 1px solid #635158;
+        padding-bottom: 5px;
         padding-top: 5px;
     }
