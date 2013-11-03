@@ -1,6 +1,7 @@
 body {
     font-family: MuseoSans, Georgia, "Times New Roman", Times, serif;
     background-color: #5C4B51;
+    color: #F2EBBF;
 }
 
 body a {
@@ -17,40 +18,82 @@ body a:visited {
     color: #F06060;
 }
 
+.container {
+    margin: 0 auto;
+    width: 800px;
+    border-left: 1px solid #635158;
+    border-right: 1px solid #635158;
+}
 /******************************
 ***********HEADER**************
 ******************************/
 .header {
     font-size: 16px;
-    color: #F2EBBF;
 }
-    .header .content {
-        margin: 0 auto;
-        width: 800px;
-        border-left: 1px solid #635158;
-        border-right: 1px solid #635158;
+    .header .title {
+        line-height: 30px;
+        width: 250px;
+        float: left;
+        padding: 20px;
     }
-        .header .content .title {
-            line-height: 30px;
-            width: 250px;
-            float: left;
-            padding: 20px;
+        .header .title .slogan {
+            font-size: 12px;
+            margin-left: 35px;
         }
-            .header .content .title .slogan {
-                font-size: 12px;
-                margin-left: 35px;
-            }
-            .header .content .title .abbr {
-                font-size: 42px;
-            }
-            .header .content .title .name {
-                font-size: 30px;
-                margin-top: 10px;
-            }
-        .header .content .navigation {
-            float: right;
-            margin-right: 5px;
+        .header .title .abbr {
+            font-size: 42px;
         }
-        .header .content .hero {
-            border: 1px dashed blue;
+        .header .title .name {
+            font-size: 30px;
+            margin-top: 10px;
         }
+    .header .navigation {
+        float: right;
+        margin-right: 5px;
+    }
+    .header .navigation a {
+        margin: 0px 8px 0px 8px;
+    }
+    .header .hero {
+    }
+    
+
+/******************************
+***********BODY****************
+******************************/
+.body {
+}
+    .body .lefty {
+        width: 500px;
+        float: left;
+        border-right: 1px solid #635158;
+        padding: 15px;
+    }
+    .body .righty 
+    {
+        left: -7px;
+        width: 29%;
+        float: right;
+        border-left: 1px solid #635158;
+        position: relative;
+        padding: 15px;
+    }
+    
+/******************************
+***********NEWS****************
+******************************/
+.news-item {
+    
+}
+    .news-item .news-header {
+        border-bottom: 1px solid #635158;
+        padding-bottom: 5px;
+    }
+        .news-item .news-header .news-date {
+            font-size: 10px;
+            color: #B896A2;
+            margin-left: 20px;
+        }
+    .news-item .news-body {
+        padding-top: 5px;
+    }

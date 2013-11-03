@@ -276,7 +276,6 @@ body {
   margin-left: 20px;
 }
 
-.container,
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
@@ -603,12 +602,6 @@ body {
 [class*="span"].pull-right,
 .row-fluid [class*="span"].pull-right {
   float: right;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  *zoom: 1;
 }
 
 .container:before,
