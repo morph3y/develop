@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Framework.IoC;
 
 namespace Web
 {
@@ -26,6 +27,8 @@ namespace Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            Bootstrapper.Bootstrap();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
