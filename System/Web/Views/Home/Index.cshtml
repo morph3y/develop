@@ -1,12 +1,14 @@
-﻿<div class="news-item">
-    <div class="news-header">
-        This is a header dhas fjhdaslhdhashashkjas hkdash kls dkjas kjas hdash kldash kjdas  daslk <span class="news-date">02-Nov-2013</span>
+﻿@using Business.Infrastructure
+@using Entities.Entities
+
+@model List<NewsItem>
+
+@foreach (var item in Model)
+{
+    <div class="news-item">
+        <div class="news-header">
+            @item.Title <span class="news-date">@item.DateCreated.ToShortDateStringEx()</span>
+        </div>
+        <div class="news-body">@item.Text</div>
     </div>
-    <div class="news-body">This is body text that is supposed to be long and all that stuff</div>
-</div>
-<div class="news-item">
-    <div class="news-header">
-        This is a header dhas fjhdaslhdhashashkjas hkdash kls dkjas kjas hdash kldash kjdas  daslk <span class="news-date">02-Nov-2013</span>
-    </div>
-    <div class="news-body">This is body text that is supposed to be long and all that stuff</div>
-</div>
+}

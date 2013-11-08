@@ -1,6 +1,6 @@
 ﻿using StructureMap;
 
-namespace Framework
+namespace Framework.Common
 {
     public static class ApplicationEnvironment
     {

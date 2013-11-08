@@ -86,11 +86,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\social_layout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
     <Content Include="Content\Scripts\jquery-1.10.1.min.js" />
     <Content Include="Content\Scripts\modernizr-2.6.2-respond-1.1.0.min.js" />
     <Content Include="Content\Scripts\System.js" />
+    <Content Include="Content\Scripts\System.Social.js" />
     <Content Include="Content\Styles\bootstrap-responsive.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\main.css" />
@@ -101,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
@@ -121,6 +124,10 @@
     <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{22ADC8D0-FBDB-4469-ACD1-4CC629FA79CB}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{E8F2EB48-3966-4361-972F-F98C94984DA7}</Project>
       <Name>Contracts</Name>
@@ -129,10 +136,17 @@
       <Project>{A41D39F5-CDAA-45E9-9617-E43EFB352BA2}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Framework.Common\Framework.Common.csproj">
+      <Project>{C9B8C814-534E-4EB7-8E6F-E682D1CAB805}</Project>
+      <Name>Framework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{94F221FB-0E9B-4CFF-AAA4-9A945684E586}</Project>
       <Name>Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Social.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

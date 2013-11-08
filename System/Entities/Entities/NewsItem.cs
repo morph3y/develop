@@ -1,10 +1,10 @@
 ﻿using System;
+using Entities.Entities.Base;
 
 namespace Entities.Entities
 {
-    public class NewsItem
+    public class NewsItem : BusinessObject
     {
-        public virtual Int32 Id { get; protected set; }
         public virtual String Title { get; set; }
         public virtual String Text { get; set; }
         public virtual DateTime DateCreated { get; set; }

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{94F221FB-0E9B-4CFF-AAA4-9A945684E586}</ProjectGuid>
+    <ProjectGuid>{C9B8C814-534E-4EB7-8E6F-E682D1CAB805}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Framework</RootNamespace>
-    <AssemblyName>Framework</AssemblyName>
+    <RootNamespace>Framework.Common</RootNamespace>
+    <AssemblyName>Framework.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="StructureMap">
-      <HintPath>bin\StructureMap.dll</HintPath>
+      <HintPath>..\Framework\bin\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,22 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IoC\Bootstrapper.cs" />
+    <Compile Include="ApplicationEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
-      <Project>{22ADC8D0-FBDB-4469-ACD1-4CC629FA79CB}</Project>
-      <Name>Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Contracts\Contracts.csproj">
-      <Project>{E8F2EB48-3966-4361-972F-F98C94984DA7}</Project>
-      <Name>Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{669A5963-5FA3-408B-9F26-4AEEB7A8AC06}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
+    <Compile Include="Query\OrderByDirection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

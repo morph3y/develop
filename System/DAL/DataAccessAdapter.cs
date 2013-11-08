@@ -1,20 +1,14 @@
 ﻿using Contracts.Dal;
-using FluentNHibernate.Cfg;
 
 namespace DAL
 {
-    public sealed class DataAccessAdapter : IDataAccessAdapter
+    internal sealed class DataAccessAdapter : IDataAccessAdapter
     {
-        private readonly FluentConfiguration _configuration;
-
-        public DataAccessAdapter()
-        {
-            _configuration = FluentEnvironment.GetConfiguration();
-        }
+        private static IDataAccessSession Session { get; set; }
 
         public IDataAccessSession GetSession()
         {
-            return new DataAccessSession(_configuration);
+            return Session ?? (Session = new DataAccessSession());
         }
     }
 }

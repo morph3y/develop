@@ -7,6 +7,7 @@ body {
 
 body a {
     color: #8CBEB2;
+    text-decoration: none;
 }
 
 body a:hover {
@@ -17,6 +18,7 @@ body a:hover {
 
 body a:visited {
     color: #F06060;
+    text-decoration: none;
 }
 
 .container {
@@ -79,13 +81,44 @@ body a:visited {
         position: relative;
         padding: 15px;
     }
-    .body .righty .social {
-        
-    }
     
 /******************************
 ***********FOOTER**************
 ******************************/
+
+/******************************
+***********SOCIAL**************
+******************************/
+    .body .social-container {
+        
+    }
+        .body .social-container .social {
+            margin-left: 10px;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+        
+        .body .social-container .facebook {
+            background: url("../Images/social_layout.png") -1px -1px;
+        }
+        .body .social-container .facebook:hover {
+            background: url("../Images/social_layout.png") -87px -1px;
+        }
+        
+        .body .social-container .twitter {
+            background: url("../Images/social_layout.png") -58px -1px;
+        }
+        .body .social-container .twitter:hover {
+            background: url("../Images/social_layout.png") -144px -1px;
+        }
+        
+        .body .social-container .linkedin {
+            background: url("../Images/social_layout.png") -29px -1px;
+        }
+        .body .social-container .linkedin:hover {
+            background: url("../Images/social_layout.png") -115px -1px;
+        }
 
 
 /******************************

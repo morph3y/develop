@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="@Url.Content("~/Content/Styles/main.css")">
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
 
+        <script src="@Url.Content("~/Content/Scripts/System.js")"></script>
         <script src="@Url.Content("~/Content/Scripts/modernizr-2.6.2-respond-1.1.0.min.js")"></script>
     </head>
     <body>
@@ -25,9 +26,7 @@
                 @RenderBody()
             </div>
             <div class="righty">
-                <div class="social">
-                    tw, facebook
-                </div>  
+                @Html.Partial("Social")
             </div>
         </div>
         @Html.Partial("Footer")
@@ -35,6 +34,5 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>            window.jQuery || document.write('<script src="@Url.Content("~/Content/Scripts/jquery-1.10.1.min.js")"><\/script>')</script>
         <script src="@Url.Content("~/Content/Scripts/bootstrap.min.js")"></script>
-        <script src="@Url.Content("~/Content/Scripts/System.js")"></script>
     </body>
 </html>
