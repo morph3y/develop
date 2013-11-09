@@ -1,6 +1,8 @@
 ﻿using Business;
 using DAL;
+using Framework.Common.IoC;
 using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace Framework.IoC
 {
@@ -9,10 +11,11 @@ namespace Framework.IoC
         private static bool _hasStarted;
         public void BootstrapStructureMap()
         {
+            ObjectFactory.Configure(x => x.For<IContainerRegistry>().Use<ContainerRegistry>());
             ObjectFactory.Configure(x=>
             {
-                x.IncludeRegistry(new DalContainerRegistry());
-                x.IncludeRegistry(new BusinessContainerRegistry());
+                x.IncludeRegistry(new DalContainerRegistry().Registry as Registry);
+                x.IncludeRegistry(new BusinessContainerRegistry().Registry as Registry);
             });
         }
 

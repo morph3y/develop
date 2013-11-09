@@ -1,13 +1,20 @@
 ﻿using Contracts.Dal;
-using StructureMap.Configuration.DSL;
+using Framework.Common;
+using Framework.Common.IoC;
 
 namespace DAL
 {
-    public sealed class DalContainerRegistry : Registry
+    public sealed class DalContainerRegistry
     {
+        private IContainerRegistry _registry;
+        public IContainerRegistry Registry
+        {
+            get { return _registry ?? (_registry = ApplicationEnvironment.Resolve<IContainerRegistry>()); }
+        }
+
         public DalContainerRegistry()
         {
-            For<IDataAccessAdapter>().Use<DataAccessAdapter>();
+            Registry.Map<IDataAccessAdapter, DataAccessAdapter>();
         }
     }
 }

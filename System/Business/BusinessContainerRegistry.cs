@@ -1,14 +1,21 @@
 ﻿using Business.Services;
 using Contracts.Business;
-using StructureMap.Configuration.DSL;
+using Framework.Common;
+using Framework.Common.IoC;
 
 namespace Business
 {
-    public sealed class BusinessContainerRegistry : Registry
+    public sealed class BusinessContainerRegistry
     {
+        private IContainerRegistry _registry;
+        public IContainerRegistry Registry
+        {
+            get { return _registry ?? (_registry = ApplicationEnvironment.Resolve<IContainerRegistry>()); }
+        }
+
         public BusinessContainerRegistry()
         {
-            For<IObjectService>().Use<ObjectService>();
+            Registry.Map<IObjectService, ObjectService>();
         }
     }
 }

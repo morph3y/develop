@@ -40,9 +40,6 @@
     <Reference Include="NHibernate">
       <HintPath>bin\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap">
-      <HintPath>..\Framework\bin\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,6 +64,10 @@
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{A41D39F5-CDAA-45E9-9617-E43EFB352BA2}</Project>
       <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Common\Framework.Common.csproj">
+      <Project>{C9B8C814-534E-4EB7-8E6F-E682D1CAB805}</Project>
+      <Name>Framework.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
