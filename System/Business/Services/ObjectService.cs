@@ -11,15 +11,15 @@ namespace Business.Services
 {
     internal sealed class ObjectService : IObjectService
     {
-        private readonly IDataAccessSession _dataAccessSession;
+        private readonly IDataAccessAdapter _dataAccessAdapter;
         public ObjectService()
         {
-            _dataAccessSession = ApplicationEnvironment.Resolve<IDataAccessAdapter>().GetSession();
+            _dataAccessAdapter = ApplicationEnvironment.Resolve<IDataAccessAdapter>();
         }
 
         public T Get<T>(int id) where T : BusinessObject
         {
-            return _dataAccessSession.Get<T>(id);
+            return _dataAccessAdapter.Get<T>(id);
         }
 
         public IEnumerable<T> GetCollection<T>() where T : BusinessObject
@@ -49,7 +49,7 @@ namespace Business.Services
             OrderByDirection? orderDirection
         ) where T : BusinessObject
         {
-            return _dataAccessSession.GetCollection(
+            return _dataAccessAdapter.GetCollection(
                 where, 
                 take, 
                 orderBy, 

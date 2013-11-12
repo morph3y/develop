@@ -51,10 +51,11 @@
   <ItemGroup>
     <Compile Include="DalContainerRegistry.cs" />
     <Compile Include="DataAccessAdapter.cs" />
+    <Compile Include="Exceptions\EntitySaveException.cs" />
     <Compile Include="FluentEnvironment.cs" />
     <Compile Include="Mappings\NewsItemMap.cs" />
+    <Compile Include="Mappings\PortfolioItemMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataAccessSession.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contracts\Contracts.csproj">

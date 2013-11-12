@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Entities\Base\BusinessObject.cs" />
     <Compile Include="Entities\NewsItem.cs" />
+    <Compile Include="Entities\PortfolioItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

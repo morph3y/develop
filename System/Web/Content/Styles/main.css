@@ -140,3 +140,23 @@ body a:visited {
         padding-bottom: 5px;
         padding-top: 5px;
     }
+    
+/******************************
+***********PORTFOLIO***********
+******************************/
+.portfolio {
+    width: 100%;
+}
+    .portfolio .top {
+        margin: 10px;
+    }
+    
+    .portfolio .item {
+        margin: 0px 15px 0px 15px;
+    }
+    
+        .portfolio .item .description 
+        {
+            margin-top: 10px;
+            font-size: smaller;
+        }

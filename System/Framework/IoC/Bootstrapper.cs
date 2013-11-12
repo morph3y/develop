@@ -12,7 +12,7 @@ namespace Framework.IoC
         public void BootstrapStructureMap()
         {
             ObjectFactory.Configure(x => x.For<IContainerRegistry>().Use<ContainerRegistry>());
-            ObjectFactory.Configure(x=>
+            ObjectFactory.Configure(x =>
             {
                 x.IncludeRegistry(new DalContainerRegistry().Registry as Registry);
                 x.IncludeRegistry(new BusinessContainerRegistry().Registry as Registry);

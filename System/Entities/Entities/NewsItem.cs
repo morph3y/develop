@@ -7,6 +7,5 @@ namespace Entities.Entities
     {
         public virtual String Title { get; set; }
         public virtual String Text { get; set; }
-        public virtual DateTime DateCreated { get; set; }
     }
 }

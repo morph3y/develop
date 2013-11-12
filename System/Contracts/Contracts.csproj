@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Business\IObjectService.cs" />
     <Compile Include="Dal\IDataAccessAdapter.cs" />
-    <Compile Include="Dal\IDataAccessSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

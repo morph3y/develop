@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using Entities.Entities;
 
 namespace Web.Controllers
 {
@@ -6,7 +8,7 @@ namespace Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new List<PortfolioItem> { new PortfolioItem { Description = "asdasdadsad", ImageUrl = "asd.jpg"} });
         }
     }
 }
