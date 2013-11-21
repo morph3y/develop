@@ -53,8 +53,14 @@
     <Compile Include="DataAccessAdapter.cs" />
     <Compile Include="Exceptions\EntitySaveException.cs" />
     <Compile Include="FluentEnvironment.cs" />
+    <Compile Include="Mappings\BusinessObjectMap.cs" />
     <Compile Include="Mappings\NewsItemMap.cs" />
     <Compile Include="Mappings\PortfolioItemMap.cs" />
+    <Compile Include="Mappings\Resume\EducationMap.cs" />
+    <Compile Include="Mappings\Resume\ExperienceItemMap.cs" />
+    <Compile Include="Mappings\Resume\ExperienceMap.cs" />
+    <Compile Include="Mappings\Resume\ResumeMap.cs" />
+    <Compile Include="Mappings\Resume\SkillMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

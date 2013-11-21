@@ -8,6 +8,8 @@ namespace Contracts.Business
 {
     public interface IObjectService
     {
+        void Save<T>(T entity) where T : BusinessObject;
+
         T Get<T>(int id) where T : BusinessObject;
         IEnumerable<T> GetCollection<T>() where T : BusinessObject;
         IEnumerable<T> GetCollection<T>(Expression<Func<T, bool>> where) where T : BusinessObject;

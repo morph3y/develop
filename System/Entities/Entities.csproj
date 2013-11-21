@@ -41,8 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Base\BusinessObject.cs" />
+    <Compile Include="Entities\Base\Resume\Education.cs" />
+    <Compile Include="Entities\Base\Resume\Experience.cs" />
+    <Compile Include="Entities\Base\Resume\ExperienceItem.cs" />
+    <Compile Include="Entities\Base\Resume\Resume.cs" />
+    <Compile Include="Entities\Base\Resume\Skill.cs" />
+    <Compile Include="Entities\Base\Resume\SkillType.cs" />
     <Compile Include="Entities\NewsItem.cs" />
-    <Compile Include="Entities\PortfolioItem.cs" />
+    <Compile Include="Entities\Base\Portfolio\Portfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

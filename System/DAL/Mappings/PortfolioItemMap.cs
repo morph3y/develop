@@ -1,16 +1,15 @@
-﻿using Entities.Entities;
+﻿using Entities.Entities.Base.Portfolio;
 using FluentNHibernate.Mapping;
 
 namespace DAL.Mappings
 {
-    public class PortfolioItemMap : ClassMap<PortfolioItem>
+    public class PortfolioItemMap : SubclassMap<Portfolio>
     {
         public PortfolioItemMap()
         {
-            Id(x => x.Id);
+            KeyColumn("Id");
             Map(x => x.ImageUrl);
             Map(x => x.Description);
-            Map(x => x.DateCreated);
         }
     }
 }

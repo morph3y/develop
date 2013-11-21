@@ -3,14 +3,13 @@ using FluentNHibernate.Mapping;
 
 namespace DAL.Mappings
 {
-    public class NewsItemMap : ClassMap<NewsItem>
+    public class NewsItemMap : SubclassMap<NewsItem>
     {
         public NewsItemMap()
         {
-            Id(x => x.Id);
+            KeyColumn("Id");
             Map(x => x.Text);
             Map(x => x.Title);
-            Map(x => x.DateCreated);
         }
     }
 }

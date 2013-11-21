@@ -17,6 +17,11 @@ namespace Business.Services
             _dataAccessAdapter = ApplicationEnvironment.Resolve<IDataAccessAdapter>();
         }
 
+        public void Save<T>(T entity) where T : BusinessObject
+        {
+            _dataAccessAdapter.Save(entity);
+        }
+
         public T Get<T>(int id) where T : BusinessObject
         {
             return _dataAccessAdapter.Get<T>(id);

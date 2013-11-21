@@ -1,9 +1,8 @@
 ﻿using System;
-using Entities.Entities.Base;
 
-namespace Entities.Entities
+namespace Entities.Entities.Base.Portfolio
 {
-    public class PortfolioItem : BusinessObject
+    public class Portfolio : BusinessObject
     {
         public virtual String Description { get; set; }
         public virtual String ImageUrl { get; set; }
