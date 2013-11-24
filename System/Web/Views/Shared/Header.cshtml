@@ -1,4 +1,13 @@
 ﻿<div class="header container">
+    <div class="loginDialog">
+      <p class="loginValidation">All form fields are required.</p>
+      <fieldset>
+        <label for="name">User name</label>
+        <input type="text" name="username" id="username" class="ui-widget-content ui-corner-all" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="" class="ui-widget-content ui-corner-all" />
+      </fieldset>
+    </div>
     <div class="title">
     <div class="abbr">AD</div>
     <div class="name">{Alex Denysenko}</div>
@@ -8,7 +17,8 @@
     @Html.ActionLink("Home", "Index", "Home") // 
     @Html.ActionLink("Portfolio", "Index", "Portfolio") // 
     @Html.ActionLink("Resume", "Index", "Resume") // 
-    <a>Contact</a>
+    <a>Contact</a> //
+    <a class="loginLink">Login</a>
     </div>
     <div style="clear:both;"></div>
 </div>
@@ -16,3 +26,52 @@
     <div class="hero">
     </div>
 </div>
+
+@Html.Partial("Components/Dialog/Dialog")
+<script type="text/javascript">
+    System.init();
+
+    // Login Dialog
+    // buttons
+    var buttons = function (dialogContainer) {
+        return {
+            "Login": function () {
+                var userNameBox = dialogContainer.find('#username');
+                var passwordBox = dialogContainer.find('#password');
+                var validationBox = dialogContainer.find('.loginValidation');
+                function checkLength(subject, caption, min, max) {
+                    if (subject.val().length > max || subject.val().length < min) {
+                        subject.addClass("ui-state-error");
+                        validationBox.text("Length of " + caption + " must be between " + min + " and " + max + ".").addClass("ui-state-highlight");
+                        setTimeout(function () {
+                            validationBox.removeClass("ui-state-highlight", 1500);
+                        }, 500);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+                var bValid = true;
+                $([]).add(passwordBox).add(passwordBox).removeClass("ui-state-error");
+
+                bValid = bValid && checkLength(userNameBox, "username", 3, 16);
+                bValid = bValid && checkLength(passwordBox, "password", 5, 16);
+
+                if (bValid) {
+                    // go to DB
+                    $(this).dialog("close");
+                }
+            },
+            Cancel: function () {
+                $(this).dialog("close");
+            }
+        };
+    };
+    System.Dialog.init($(".loginDialog"), {
+        autoOpen: false,
+        height: 350,
+        width: 500,
+        isModal: true,
+        buttons: buttons
+    });
+</script>

@@ -19,6 +19,7 @@ namespace Business.Services
 
         public void Save<T>(T entity) where T : BusinessObject
         {
+            entity.DateModified = DateTime.Now;
             _dataAccessAdapter.Save(entity);
         }
 

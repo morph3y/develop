@@ -1,5 +1,4 @@
-﻿using System;
-using Entities.Entities.Base;
+﻿using Entities.Entities.Base;
 using FluentNHibernate.Mapping;
 
 namespace DAL.Mappings
@@ -8,8 +7,9 @@ namespace DAL.Mappings
     {
         public BusinessObjectMap()
         {
-            Id(x => x.Id).Column("Id").GeneratedBy.HiLo("1");
+            Id(x => x.Id).Column("Id").GeneratedBy.Identity();
             Map(x => x.DateCreated).Access.Property().Default("getdate()").Not.Insert().Not.Update().Generated.Always().Not.Nullable();
+            Map(x => x.DateModified).Access.Property().Nullable();
         }
     }
 }

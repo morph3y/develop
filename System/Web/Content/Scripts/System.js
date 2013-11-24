@@ -25,3 +25,15 @@
 };
 
 Namespace.register('System');
+
+System = {
+    init: function () {
+        // initialize events
+        this.initEvents();
+    },
+    initEvents: function () {
+        $('.loginLink').click(function () {
+            $(".loginDialog").dialog("open");
+        });
+    }
+};
