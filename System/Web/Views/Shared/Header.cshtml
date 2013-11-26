@@ -58,7 +58,9 @@
                 bValid = bValid && checkLength(passwordBox, "password", 5, 16);
 
                 if (bValid) {
-                    // go to DB
+                    $.ajax(function() {
+                        
+                    });
                     $(this).dialog("close");
                 }
             },

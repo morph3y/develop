@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using Entities.Entities.Base.Portfolio;
+using Entities.Entities.Portfolio;
 
 namespace Web.Controllers
 {

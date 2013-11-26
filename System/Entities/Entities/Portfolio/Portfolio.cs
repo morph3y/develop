@@ -1,6 +1,7 @@
 ﻿using System;
+using Entities.Entities.Base;
 
-namespace Entities.Entities.Base.Portfolio
+namespace Entities.Entities.Portfolio
 {
     public class Portfolio : BusinessObject
     {

@@ -2,7 +2,7 @@
 
 namespace DAL.Mappings.Resume
 {
-    public class ResumeMap : SubclassMap<Entities.Entities.Base.Resume.Resume>
+    public class ResumeMap : SubclassMap<Entities.Entities.Resume.Resume>
     {
         public ResumeMap()
         {

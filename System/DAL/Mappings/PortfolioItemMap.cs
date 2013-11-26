@@ -1,4 +1,4 @@
-﻿using Entities.Entities.Base.Portfolio;
+﻿using Entities.Entities.Portfolio;
 using FluentNHibernate.Mapping;
 
 namespace DAL.Mappings

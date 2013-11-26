@@ -1,5 +1,5 @@
 ﻿using System;
-using Entities.Entities.Base.Resume;
+using Entities.Entities.Resume;
 using FluentNHibernate.Mapping;
 
 namespace DAL.Mappings.Resume

@@ -61,6 +61,7 @@
     <Compile Include="Mappings\Resume\ExperienceMap.cs" />
     <Compile Include="Mappings\Resume\ResumeMap.cs" />
     <Compile Include="Mappings\Resume\SkillMap.cs" />
+    <Compile Include="Mappings\User\UserMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

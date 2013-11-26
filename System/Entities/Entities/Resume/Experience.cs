@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Entities.Entities.Base;
 
-namespace Entities.Entities.Base.Resume
+namespace Entities.Entities.Resume
 {
     public class Experience : BusinessObject
     {

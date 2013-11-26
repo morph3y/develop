@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Business.Infrastructure
+namespace Web.Infrastructure
 {
     public static class DateTimeExtensions
     {

@@ -1,6 +1,7 @@
 using System;
+using Entities.Entities.Base;
 
-namespace Entities.Entities.Base.Resume
+namespace Entities.Entities.Resume
 {
     public class Education : BusinessObject
     {
