@@ -1,7 +1,9 @@
 ﻿@using Entities.Entities.Portfolio
+@using Web.Infrastructure.Assets
 
 @model List<Portfolio>
 
+@Html.RenderAsset(Assets.Styles.Portfolio)
 <div class="portfolio">
     <div class="top">
         &ensp;Hi Everybody! My name is Alex as you have already noticed from my logo. Here is my portfolio section 

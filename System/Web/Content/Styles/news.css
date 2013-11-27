@@ -1,0 +1,16 @@
+﻿.news-item {
+    margin-top: 10px;
+}
+    .news-item .news-header {
+        font-size: 1.2em;
+    }
+        .news-item .news-header .news-date {
+            font-size: 10px;
+            color: #B896A2;
+            margin-left: 20px;
+        }
+    .news-item .news-body {
+        border-bottom: 1px solid #635158;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }

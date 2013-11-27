@@ -111,63 +111,22 @@ body a:visited {
         }
         
         .body .social-container .facebook {
-            background: url("../Images/social_layout.png") -1px -1px;
+            background: url("../Styles/Images/social_layout.png") -1px -1px;
         }
         .body .social-container .facebook:hover {
-            background: url("../Images/social_layout.png") -87px -1px;
+            background: url("../Styles/Images/social_layout.png") -87px -1px;
         }
         
         .body .social-container .twitter {
-            background: url("../Images/social_layout.png") -58px -1px;
+            background: url("../Styles/Images/social_layout.png") -58px -1px;
         }
         .body .social-container .twitter:hover {
-            background: url("../Images/social_layout.png") -144px -1px;
+            background: url("../Styles/Images/social_layout.png") -144px -1px;
         }
         
         .body .social-container .linkedin {
-            background: url("../Images/social_layout.png") -29px -1px;
+            background: url("../Styles/Images/social_layout.png") -29px -1px;
         }
         .body .social-container .linkedin:hover {
-            background: url("../Images/social_layout.png") -115px -1px;
-        }
-
-
-/******************************
-***********NEWS****************
-******************************/
-.news-item {
-    margin-top: 10px;
-}
-    .news-item .news-header {
-        font-size: 1.2em;
-    }
-        .news-item .news-header .news-date {
-            font-size: 10px;
-            color: #B896A2;
-            margin-left: 20px;
-        }
-    .news-item .news-body {
-        border-bottom: 1px solid #635158;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    
-/******************************
-***********PORTFOLIO***********
-******************************/
-.portfolio {
-    width: 100%;
-}
-    .portfolio .top {
-        margin: 10px;
-    }
-    
-    .portfolio .item {
-        margin: 0px 15px 0px 15px;
-    }
-    
-        .portfolio .item .description 
-        {
-            margin-top: 10px;
-            font-size: smaller;
+            background: url("../Styles/Images/social_layout.png") -115px -1px;
         }

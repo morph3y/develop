@@ -1,8 +1,10 @@
 ﻿@using Entities.Entities
 @using Web.Infrastructure
+@using Web.Infrastructure.Assets
 
 @model List<NewsItem>
 
+@Html.RenderAsset(Assets.Styles.News)
 @foreach (var item in Model)
 {
     <div class="news-item">

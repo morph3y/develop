@@ -1,4 +1,5 @@
-﻿<div class="header container">
+﻿@using Web.Infrastructure.Assets
+<div class="header container">
     <div class="loginDialog">
       <p class="loginValidation">All form fields are required.</p>
       <fieldset>
@@ -27,7 +28,7 @@
     </div>
 </div>
 
-@Html.Partial("Components/Dialog/Dialog")
+@Html.RenderAsset(Assets.Scripts.Components.Dialog)
 <script type="text/javascript">
     System.init();
 
