@@ -60,6 +60,9 @@ body a:visited {
     }
     .header .hero {
     }
+        .header .loginDialog {
+            display: none;
+        }
 
         .header .loginDialog fieldset {
             padding:0; 
