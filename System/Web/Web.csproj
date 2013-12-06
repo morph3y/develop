@@ -94,7 +94,6 @@
     <Compile Include="Infrastructure\Assets\ScriptAsset.cs" />
     <Compile Include="Infrastructure\Assets\StyleAsset.cs" />
     <Compile Include="Infrastructure\DateTimeExtensions.cs" />
-    <Compile Include="Infrastructure\Filters\AjaxOnlyAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

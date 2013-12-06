@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessContainerRegistry.cs" />
+    <Compile Include="Crypt\Cryptography.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ObjectService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

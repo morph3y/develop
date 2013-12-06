@@ -20,6 +20,7 @@
     @Html.ActionLink("Resume", "Index", "Resume") // 
     <a>Contact</a> //
     <a class="loginLink">Login</a>
+    <a class="logoutLink">Logout</a>
     </div>
     <div style="clear:both;"></div>
 </div>
@@ -31,7 +32,40 @@
 @Html.RenderAsset(Assets.Scripts.Components.Dialog)
 <script type="text/javascript">
     System.init();
+    
+    var dialogContainer = $(".loginDialog");
+    var loginLink = $('.loginLink');
+    var logoutLink = $('.logoutLink');
+    
+    var toggleAuthenticated = function(authenticated) {
+        if (authenticated) {
+            loginLink.hide();
+            logoutLink.show();
+        }
+        else {
+            loginLink.show();
+            logoutLink.hide();
+        }
+    };
+    
+    toggleAuthenticated(@User.Identity.IsAuthenticated.ToString().ToLower());
+    
+    loginLink.on('click', function () {
+        dialogContainer.dialog("open");
+    });
 
+    logoutLink.on('click', function() {
+        $.ajax({
+            type: 'POST',
+            url: "@Url.Action("Logout", "User", new { Area = "Admin" })",
+            data: { },
+            complete: function (data) {
+                var response = $.parseJSON(data.responseText);
+                toggleAuthenticated(response.authenticated);
+            }
+        });
+    });
+    
     // Login Dialog
     // buttons
     var buttons = function (dialogContainer) {
@@ -59,8 +93,15 @@
                 bValid = bValid && checkLength(passwordBox, "password", 5, 16);
 
                 if (bValid) {
-                    $.ajax(function() {
-                        
+                    var url = "@Url.Action("Login", "User", new { Area = "Admin" })";
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: { username: userNameBox.val(), password: passwordBox.val() },
+                        complete: function (data) {
+                            var response = $.parseJSON(data.responseText);
+                            toggleAuthenticated(response.authenticated);
+                        }
                     });
                     $(this).dialog("close");
                 }
@@ -70,7 +111,7 @@
             }
         };
     };
-    System.Dialog.init($(".loginDialog"), {
+    System.Dialog.init(dialogContainer, {
         autoOpen: false,
         height: 350,
         width: 500,

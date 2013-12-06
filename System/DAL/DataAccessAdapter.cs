@@ -4,12 +4,13 @@ using System.Linq.Expressions;
 using Contracts.Dal;
 using DAL.Exceptions;
 using Entities.Entities.Base;
+using Entities.Entities.User;
 using NHibernate;
 using NHibernate.Criterion;
 
 namespace DAL
 {
-    internal sealed class DataAccessAdapter : IDataAccessAdapter
+    internal sealed class DataAccessAdapter : IDataAccessAdapter, IUserAccessAdapter
     {
         private readonly ISessionFactory _sessionFactory;
 
@@ -89,5 +90,38 @@ namespace DAL
             }
             return toReturn;
         }
+
+        #region UserAccessAdapter members
+        public User GetUser(string userName)
+        {
+            User toReturn;
+            using (var dataAccessSession = _sessionFactory.OpenSession())
+            {
+                toReturn = dataAccessSession.QueryOver<User>().Where(x => x.UserName == userName).SingleOrDefault();
+            }
+
+            return toReturn;
+        }
+
+        public void SaveUser(User user)
+        {
+            using (var dataAccessSession = _sessionFactory.OpenSession())
+            {
+                try
+                {
+                    using (var transaction = dataAccessSession.BeginTransaction())
+                    {
+                        transaction.Begin();
+                        dataAccessSession.SaveOrUpdate(user);
+                        transaction.Commit();
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new EntitySaveException(e);
+                }
+            }
+        }
+        #endregion
     }
 }

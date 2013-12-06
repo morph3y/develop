@@ -15,6 +15,7 @@ namespace DAL
         public DalContainerRegistry()
         {
             Registry.Map<IDataAccessAdapter, DataAccessAdapter>();
+            Registry.Map<IUserAccessAdapter, DataAccessAdapter>();
         }
     }
 }

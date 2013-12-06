@@ -16,6 +16,7 @@ namespace Business
         public BusinessContainerRegistry()
         {
             Registry.Map<IObjectService, ObjectService>();
+            Registry.Map<IUserService, UserService>();
         }
     }
 }
