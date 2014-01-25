@@ -1,4 +1,5 @@
-﻿using Contracts.Dal;
+﻿using Contracts.Business;
+using Contracts.Dal;
 using Framework.Common;
 using Framework.Common.IoC;
 

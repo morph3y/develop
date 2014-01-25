@@ -1,7 +1,7 @@
 ﻿using System;
 using Entities.Entities.User;
 
-namespace Contracts.Dal
+namespace Contracts.Business
 {
     public interface IUserAccessAdapter
     {

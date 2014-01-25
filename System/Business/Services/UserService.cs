@@ -1,7 +1,6 @@
 ﻿using System;
 using Business.Crypt;
 using Contracts.Business;
-using Contracts.Dal;
 using Entities.Entities.User;
 using Framework.Common;
 

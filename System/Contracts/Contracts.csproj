@@ -46,7 +46,7 @@
     <Compile Include="Business\IObjectService.cs" />
     <Compile Include="Business\IUserService.cs" />
     <Compile Include="Dal\IDataAccessAdapter.cs" />
-    <Compile Include="Dal\IUserAccessAdapter.cs" />
+    <Compile Include="Business\IUserAccessAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Contracts.Business;
 using Contracts.Dal;
 using DAL.Exceptions;
 using Entities.Entities.Base;

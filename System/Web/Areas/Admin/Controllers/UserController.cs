@@ -18,8 +18,7 @@ namespace Web.Areas.Admin.Controllers
         public String Login(String username, String password)
         {
             var serializer = new JavaScriptSerializer();
-            var authResult = UserService.Authenticate(username, password);
-            if (!authResult)
+            if (!UserService.Authenticate(username, password))
             {
                 return serializer.Serialize(new { authenticated = false });
             }
