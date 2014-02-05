@@ -15,12 +15,17 @@
     <div class="slogan">BC has passed guys, its time for AD</div>
     </div>
     <div class="navigation">
-    @Html.ActionLink("Home", "Index", "Home") // 
-    @Html.ActionLink("Portfolio", "Index", "Portfolio") // 
-    @Html.ActionLink("Resume", "Index", "Resume") // 
-    @Html.ActionLink("Contact", "Index", "Contact") //
+    @Html.ActionLink("Home", "Index", "Home", new { area = "" }, null) // 
+    @Html.ActionLink("Portfolio", "Index", "Portfolio", new { area = "" }, null) // 
+    @Html.ActionLink("Resume", "Index", "Resume", new { area = "" }, null) // 
+    @Html.ActionLink("Contact", "Index", "Contact", new { area = "" }, null) //
     <a class="loginLink">Login</a>
     <a class="logoutLink">Logout</a>
+    <br />
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Admin", "Index", "Home", new { area = "Admin" }, null)
+    }
     </div>
     <div style="clear:both;"></div>
 </div>

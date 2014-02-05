@@ -1,24 +1,24 @@
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #5C4B51;
-    color: #F2EBBF;
+    background-color: #DAEDE2;
+    color: #333745;
     font-weight: 100;
     margin: 0;
 }
 
 body a {
-    color: #8CBEB2;
+    color: #EA2E49;
     text-decoration: none;
 }
 
 body a:hover {
-    color: #F3B562;
+    color: #77C4D3;
     cursor: pointer;
     text-decoration: underline;
 }
 
 body a:visited {
-    color: #F06060;
+    color: #EA2E49;
     text-decoration: none;
 }
 
