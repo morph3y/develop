@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Entities.Entities.Base;
@@ -15,5 +16,8 @@ namespace Contracts.Dal
             Expression<Func<T, object>> orderBy,
             Int32? orderDirection
         ) where T : BusinessObject;
+
+        IEnumerable GetCollection(Type type, Int32? take);
+        void Delete<T>(Int32 id) where T : BusinessObject;
     }
 }

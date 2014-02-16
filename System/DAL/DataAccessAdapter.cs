@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Contracts.Business;
@@ -6,6 +7,7 @@ using Contracts.Dal;
 using DAL.Exceptions;
 using Entities.Entities.Base;
 using Entities.Entities.User;
+using FluentNHibernate.Utils;
 using NHibernate;
 using NHibernate.Criterion;
 
@@ -38,7 +40,6 @@ namespace DAL
                 {
                     using (var transaction = dataAccessSession.BeginTransaction())
                     {
-                        transaction.Begin();
                         dataAccessSession.SaveOrUpdate(entity);
                         transaction.Commit();
                     }
@@ -90,6 +91,48 @@ namespace DAL
                 toReturn = query.GetExecutableQueryOver(dataAccessSession).List<T>();
             }
             return toReturn;
+        }
+
+        public IEnumerable GetCollection(Type type, Int32? take)
+        {
+            using (var dataAccessSession = _sessionFactory.OpenSession())
+            {
+                var criteria = dataAccessSession.CreateCriteria(type);
+                if (take.HasValue)
+                {
+                    criteria.SetFetchSize(take.Value);
+                }
+                return criteria.List();
+            }
+        }
+
+        public void Delete<T>(Int32 id) where T : BusinessObject
+        {
+            using (var dataAccessSession = _sessionFactory.OpenSession())
+            {
+                using (var transaction = dataAccessSession.BeginTransaction())
+                {
+                    dataAccessSession.Delete(dataAccessSession.Load<T>(id));
+                    transaction.Commit();
+                }
+            }
+        }
+
+        public void Delete<T>(List<Int32> ids) where T : BusinessObject
+        {
+            using (var dataAccessSession = _sessionFactory.OpenStatelessSession())
+            {
+                using(var transaction = dataAccessSession.BeginTransaction())
+                {
+                    var entities = GetCollection<T>(x=>x.Id.IsIn(ids), null, null, null);
+                    if (entities == null) return;
+                    foreach (var entity in entities)
+                    {
+                        dataAccessSession.Delete(entity);
+                    }
+                    transaction.Commit();
+                }
+            }
         }
 
         #region UserAccessAdapter members

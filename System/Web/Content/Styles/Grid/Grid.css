@@ -1,0 +1,47 @@
+﻿.gridHeader {
+    position: relative;
+    width: 100%;
+    border: 1px solid black;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 25px;
+}
+
+    .gridHeader .gridTitle {
+        margin: 5px;
+        font-weight: bold;
+    }
+.gridFooter {
+    position: relative;
+    width: 100%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 15px;
+}
+
+.grid {
+    position: relative;
+    width: 100%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+    .grid table {
+        width: 100%;
+    }
+    
+    .grid table tr:nth-child(even) {
+        background-color: lightgrey;
+    }
+    
+    .grid .cell {
+            
+    }
+        .grid .cell .option {
+            display: inline-block;
+            margin-right: 2px;
+        }
+        
+        .grid .cell .option:hover {
+            cursor: pointer;
+        }

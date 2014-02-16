@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Entities.Entities.Base;
@@ -20,5 +21,9 @@ namespace Contracts.Business
         IEnumerable<T> GetCollection<T>(Int32? take) where T : BusinessObject;
         IEnumerable<T> GetCollection<T>(Expression<Func<T, object>> orderBy, OrderByDirection? orderDirection) where T : BusinessObject;
         IEnumerable<T> GetCollection<T>(Int32? take, Expression<Func<T, object>> orderBy, OrderByDirection? orderDirection) where T : BusinessObject;
+
+        IEnumerable GetCollection(Type type, Int32? take);
+        void Delete<T>(Int32 id) where T : BusinessObject;
+        void Delete<T>(T entity) where T : BusinessObject;
     }
 }

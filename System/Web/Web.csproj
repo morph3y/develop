@@ -80,9 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Framework\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Framework\EntityController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GridController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsItemController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -99,9 +101,13 @@
     <Compile Include="Infrastructure\Assets\ScriptAsset.cs" />
     <Compile Include="Infrastructure\Assets\StyleAsset.cs" />
     <Compile Include="Infrastructure\DateTimeExtensions.cs" />
+    <Compile Include="Infrastructure\Grid\Grid.cs" />
+    <Compile Include="Infrastructure\Grid\GridHelperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Scripts\Components\System.Grid.js" />
+    <Content Include="Content\Styles\Grid\Grid.css" />
     <Content Include="Content\Styles\Images\animated-overlay.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -230,7 +236,10 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsItem\Inventory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\NewsItem\DetailPage.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

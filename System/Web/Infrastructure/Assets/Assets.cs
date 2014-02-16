@@ -15,6 +15,7 @@ namespace Web.Infrastructure.Assets
                 private const String ComponentsFolder = ScriptsFolder + "/Components";
 
                 public static Asset Dialog = new ScriptAsset(ComponentsFolder + "/System.Dialog.js");
+                public static Asset Grid = new ScriptAsset(ComponentsFolder + "/System.Grid.js");
             }
 
             public static Asset JQuery = new ScriptAsset(ScriptsFolder + "/jquery-1.10.1.min.js");
@@ -36,6 +37,13 @@ namespace Web.Infrastructure.Assets
             // Features
             public static Asset Portfolio = new StyleAsset(StylesFolder + "/portfolio.css");
             public static Asset News = new StyleAsset(StylesFolder + "/news.css");
+
+            public static class Grid
+            {
+                private const String GridFolder = StylesFolder + "/Grid";
+
+                public static Asset GridMain = new StyleAsset(GridFolder + "/Grid.css");
+            }
         }
     }
 }
