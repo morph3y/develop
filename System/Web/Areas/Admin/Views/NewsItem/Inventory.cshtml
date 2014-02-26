@@ -1,9 +1,7 @@
 ﻿@using Entities.Entities
-@using Web.Infrastructure.Assets
 @using Web.Infrastructure.Grid
+@using Web.Infrastructure.Assets
 
 @Html.RenderAsset(Assets.Styles.Grid.GridMain)
 
-@{
-    Write(Html.RenderGrid(typeof (NewsItem), new List<string> {"Text", "DateCreated"}));
-}
+@Html.Grid(typeof(NewsItem), new List<string> { "Text", "DateCreated" })

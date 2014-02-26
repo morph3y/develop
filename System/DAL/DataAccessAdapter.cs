@@ -7,7 +7,7 @@ using Contracts.Dal;
 using DAL.Exceptions;
 using Entities.Entities.Base;
 using Entities.Entities.User;
-using FluentNHibernate.Utils;
+using Framework.Common.Query;
 using NHibernate;
 using NHibernate.Criterion;
 
@@ -70,11 +70,11 @@ namespace DAL
                 {
                     if (orderDirection.HasValue)
                     {
-                        if (orderDirection == 0)
+                        if (orderDirection == (Int32)OrderByDirection.Ascending)
                         {
                             query.OrderBy(orderBy).Asc();
                         }
-                        if (orderDirection == 1)
+                        if (orderDirection == (Int32)OrderByDirection.Descending)
                         {
                             query.OrderBy(orderBy).Desc();
                         }
