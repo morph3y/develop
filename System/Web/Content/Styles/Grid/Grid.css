@@ -11,6 +11,15 @@
         margin: 5px;
         font-weight: bold;
     }
+    
+    .gridHeader .gridTitle .titleCaption {
+        display: inline-block;
+    }
+    
+    .gridHeader .gridTitle span {
+        display: inline-block;
+        cursor: pointer;
+    }
 .gridFooter {
     position: relative;
     width: 100%;

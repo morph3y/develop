@@ -58,8 +58,19 @@ namespace Web.Infrastructure.Grid
         private String GetGridHtml()
         {
             var sb = new StringBuilder();
-            sb.Append("<div class='gridContainer'><div class='gridHeader'><div class='gridTitle'>" + EntityType.Name + " List</div></div>");
-            sb.Append("<div id='" + GridId + "' class='grid'><table>");
+            sb.Append("<div class='gridContainer'>" +
+                        "<div class='gridHeader'>" +
+                            "<div class='gridTitle'><div class='titleCaption'>" + EntityType.Name + " List</div>" +
+                                "<span class='option create ui-icon ui-icon-plusthick' data-url='" +
+                                    UrlHelper.Action("RedirectToEntityController", "Grid",
+                                        new RouteValueDictionary
+                                            {
+                                                { "actionName", "Create" },
+                                                { "entityName", EntityType.Name }
+                                            }) + "'> </span>" +
+                            "</div>" +
+                        "</div>");
+            sb.Append(  "<div id='" + GridId + "' class='grid'><table>");
 
             RenderGridHeaders(sb);
 
@@ -96,11 +107,14 @@ namespace Web.Infrastructure.Grid
                           UrlHelper.Action("RedirectToEntityController", "Grid",
                         new RouteValueDictionary
                             {
-                                { "actionName", "Delete" }, { "entityName", EntityType.Name }, { "entityId", ViewData.Eval("Id") }
+                                { "actionName", "Delete" }, 
+                                { "entityName", EntityType.Name },
+                                { "entityId", ViewData.Eval("Id") }
                             })
-                          +"'></span></td>");
+                          +"' data-id='"+ ViewData.Eval("Id") +"'></span></td>");
                 foreach (var property in Columns)
                 {
+                    // TODO: Use templates here
                     sb.Append("<td class='cell'>" + ViewData.Eval(property) + "</td>");
                 }
                 sb.Append("</tr>");

@@ -8,7 +8,7 @@ using Web.Infrastructure.Views;
 namespace Web.Areas.Admin.Controllers.Framework
 {
     [ViewMode]
-    public class EntityController<T> : AdminBaseController where T : BusinessObject
+    public class EntityController<T> : AdminBaseController where T : BusinessObject , new()
     {
         private IObjectService _objectService;
         protected IObjectService ObjectService
@@ -40,11 +40,38 @@ namespace Web.Areas.Admin.Controllers.Framework
         }
 
         [ActionName("Delete")]
-        [HttpPost]
         public virtual ActionResult Delete(Int32 id)
         {
             ObjectService.Delete<T>(id);
             return RedirectToAction("Index");
+        }
+
+        [ActionName("Update")]
+        [HttpPost]
+        public ActionResult Update(Int32 id)
+        {
+            var model = ObjectService.Get<T>(id);
+            TryUpdateModel(model);
+            ObjectService.Save(model);
+
+            return RedirectToAction("Index");
+        }
+
+        [ActionName("Create")]
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(GetDetailViewName());
+        }
+
+        [ActionName("Create")]
+        [HttpPost]
+        public ActionResult Insert()
+        {
+            var model = new T();
+            TryUpdateModel(model);
+            ObjectService.Save(model);
+            return View(GetListViewName());
         }
 
         protected internal virtual String GetDetailViewName()

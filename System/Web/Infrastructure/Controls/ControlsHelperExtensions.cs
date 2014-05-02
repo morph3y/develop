@@ -14,6 +14,12 @@ namespace Web.Infrastructure.Controls
 
         public static Form BeginForm(this HtmlHelper helper, String action)
         {
+            action = ViewMode.Current == ViewModes.Create
+                     ? "Create"
+                     : ViewMode.Current == ViewModes.Edit
+                           ? "Update"
+                           : String.Empty;
+
             return new Form(helper.ViewContext, action);
         }
 

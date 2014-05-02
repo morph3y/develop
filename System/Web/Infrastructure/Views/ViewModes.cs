@@ -2,7 +2,7 @@
 
 namespace Web.Infrastructure.Views
 {
-    internal static class ViewMode
+    public static class ViewMode
     {
         public static ViewModes Current
         {

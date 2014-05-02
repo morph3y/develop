@@ -1,8 +1,6 @@
 ﻿Namespace.register('System.Grid');
 
 System.Grid = (function () {
-    var i, il;
-
     var defaultParams = {
     };
 
@@ -14,16 +12,9 @@ System.Grid = (function () {
             return;
         }
 
-        var rows = grid.find('tr:not(.headers)');
-        for (i = 0, il = rows.length; i < il; i++) {
-            var controls = $(rows[i]).find('td.options');
-            var buttons = controls.find('span.option');
-            for (var j = 0; j < buttons.length; j++) {
-                $(buttons[j]).click(function () {
-                    window.location = $(this).data('url');
-                });
-            }
-        };
+        grid.parent().find('span.option').on('click', function () {
+            window.location = $(this).data('url');
+        });
     };
 
     var publicObject = {};
