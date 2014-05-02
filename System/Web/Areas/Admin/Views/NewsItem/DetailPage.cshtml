@@ -1,1 +1,17 @@
-﻿asdasd
+﻿@using Entities.Entities
+@using Web.Infrastructure.Controls
+@model NewsItem
+@using (Html.FieldArea("Fields"))
+{
+    using (Html.BeginForm("Update"))
+    {
+        @Html.HiddenFor(x=>x.Id)
+        @Html.HiddenFor(x=>x.DateModified)
+        @Html.HiddenFor(x=>x.DateCreated)
+
+        Html.FieldFor("Title");
+        Html.FieldFor("Text");
+
+        Html.SubmitButton("Save");
+    }
+}

@@ -23,6 +23,10 @@ namespace Business.Services
         public Boolean Authenticate(String userName, String password)
         {
             var user = UserAccessAdapter.GetUser(userName);
+            if (user == null)
+            {
+                throw new UnauthorizedAccessException("User Not Found");
+            }
             return ValidatePassword(password, user.Password);
         }
 

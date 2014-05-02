@@ -10,7 +10,8 @@ namespace Web.Infrastructure.Assets
                                             Assets.Styles.Bootstrap,
                                             Assets.Styles.BootstrapResponsive,
                                             Assets.Styles.JQuery,
-                                            Assets.Styles.Main
+                                            Assets.Styles.Main,
+                                            Assets.Styles.Controls.Fields
                                         };
         // Scripts
         public static IList<Asset> MainScriptPackage = new List<Asset>

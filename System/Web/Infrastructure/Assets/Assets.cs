@@ -44,6 +44,13 @@ namespace Web.Infrastructure.Assets
 
                 public static Asset GridMain = new StyleAsset(GridFolder + "/Grid.css");
             }
+
+            public static class Controls
+            {
+                private const String ControlsFolder = StylesFolder + "/Controls";
+
+                public static Asset Fields = new StyleAsset(ControlsFolder + "/fields.css");
+            }
         }
     }
 }

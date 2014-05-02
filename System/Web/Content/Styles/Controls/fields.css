@@ -1,0 +1,30 @@
+﻿/* FieldArea */
+.fieldarea {
+    border: 1px solid black;
+    padding: 5px;
+    position: relative;
+    border-top: 0px;
+}
+    .fieldarea .fldaheader {
+        position: relative;
+        top: -15px;
+        font-weight: bold;
+    }
+    
+/* Container */
+.fld-container {
+    margin: 10px 0px 0px 0px;
+    background-color: #D3D3D3;
+}
+
+    .fld-container .fld-caption 
+    {
+        width: 150px;
+        display: inline;
+    }
+    
+    .fld-container .fld-value {
+        width: 50%;
+        display: inline;
+        margin-left: 100px;
+    }
