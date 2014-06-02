@@ -5,11 +5,15 @@
         margin: 10px;
     }
     
-    .portfolio .item {
-        margin: 0px 15px 0px 15px;
+    .portfolio .portfolio-item {
+        margin: 15px;
     }
     
-        .portfolio .item .description 
+        .portfolio .portfolio-item img {
+            float: left;
+        }
+    
+        .portfolio .portfolio-item .portfolio-item-description 
         {
             margin-top: 10px;
             font-size: smaller;

@@ -1,0 +1,9 @@
+﻿@using Entities.Entities.Portfolio
+@model Portfolio
+
+<div class="portfolio-item">
+    <a href="@Model.Url">
+        <img src="@Url.Content("~/Content/Styles/Images/PortfolioImages/" + Model.ImageUrl)" alt="Portfolio Image Caption" />
+    </a>
+    <div class="portfolio-item-description">@Model.Description</div>
+</div>

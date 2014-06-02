@@ -89,6 +89,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\PresentationController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +187,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\Styles\Images\PortfolioImages\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
@@ -257,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\DateTime.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Portfolio\PortfolioPiece.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

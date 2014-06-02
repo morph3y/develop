@@ -2,7 +2,7 @@
 
 namespace Web.Controllers
 {
-    public class ResumeController : Controller
+    public class ResumeController : PresentationController
     {
         public ActionResult Index()
         {

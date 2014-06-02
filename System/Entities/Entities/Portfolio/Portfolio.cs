@@ -7,5 +7,6 @@ namespace Entities.Entities.Portfolio
     {
         public virtual String Description { get; set; }
         public virtual String ImageUrl { get; set; }
+        public virtual String Url { get; set; }
     }
 }

@@ -6,18 +6,11 @@
 @Html.RenderAsset(Assets.Styles.Portfolio)
 <div class="portfolio">
     <div class="top">
-        &ensp;Hi Everybody! My name is Alex as you have already noticed from my logo. Here is my portfolio section 
-        with my old work that I did in Humber College. <br /> <br />This website is created using technologies I learned there and 
-        during my work career as a Web Developer. All of them are pretty simple and don't reflect my current ability because
-        learning is what I do every day. Web Development area is very wide and changes every second, so currently I probably know a
-        thousand times more than I have here. Enjoy!
+           This is text that needs to be updated
     </div>
     <br />
     @foreach (var item in Model)
     {
-        <div class="item">
-            <div class="item-top" data-imageUrl="@item.ImageUrl"></div>
-            <div class="description">@item.Description</div>
-        </div>
+        Html.RenderPartial("PortfolioPiece", item);
     }
 </div>

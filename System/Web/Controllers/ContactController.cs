@@ -2,7 +2,7 @@
 
 namespace Web.Controllers
 {
-    public class ContactController : Controller
+    public class ContactController : PresentationController
     {
         public ActionResult Index()
         {

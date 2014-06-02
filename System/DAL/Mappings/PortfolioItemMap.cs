@@ -10,6 +10,7 @@ namespace DAL.Mappings
             KeyColumn("Id");
             Map(x => x.ImageUrl);
             Map(x => x.Description);
+            Map(x => x.Url);
         }
     }
 }
