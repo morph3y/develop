@@ -1,0 +1,11 @@
+id_rsa
+id_rsa.pub
+/System/_ReSharper.System/
+/System/System/obj/
+/System/System/bin/
+/System/*.ReSharper.user
+/System/*.suo
+/System/*/bin
+/System/*/obj
+/System/*/*.user
+/System/*/Web.Publish.xml
